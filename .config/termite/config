@@ -1,0 +1,45 @@
+[options]
+font 		    = Monospace 12
+cursor_blink 	= system
+cursor_shape 	= underline
+allow_bold 	    = true
+browser 	    = firefox
+clickable_url 	= true
+search_wrap 	= true
+dynamic_title 	= true
+urgent_on_bell 	= true
+
+[colors]
+foreground 	= #ffffff
+cursor		= #ff66ff
+background 	= #000000
+
+# if unset, reverses foreground and background
+# highlight 	= #2f2f2f
+
+# black
+color0		= #000000
+color8		= #555555
+# red 
+color1		= #aa0000
+color9		= #ff5555
+# green
+color2		= #00aa00
+color10		= #55ff55
+# orange / yellow 
+color3 		= #aa5500
+color11 	= #ffff55
+# blue 
+color12		= #a1a1a1
+color4		= #ffffff
+# purple / violet 
+color13		= #ff55ff
+# cyan 
+color6		= #00aaaa
+color14		= #c216ff 
+# grey
+color7		= #aaaaaa
+color15		= #ffffff
+
+# directory
+color5		= #e6e6e6
