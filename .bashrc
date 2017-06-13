@@ -5,7 +5,15 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-# PS1='[\u@\h \W]\$ '
+export EDITOR=/usr/bin/vim
 
-export PS1="\[$(tput bold)\]\[\033[38;5;9m\][\[\033[38;5;227m\]\u\[\033[38;5;84m\]@\[\033[38;5;39m\]\h\[\033[38;5;213m\]\w \[\033[38;5;9m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]\\$ \[$(tput sgr0)\]"
+alias ls='ls --group-directories-first --color=auto -F'
+alias ll='ls -l --group-directories-first --color=auto -F'
+alias lla='ls -la --group-directories-first --color=auto -F'
+alias df='df -h'
+
+if [ -z "$(pidof i3)" ]; then
+    export PS1="\[$(tput bold)\]\[\033[38;5;9m\][\[\033[38;5;227m\]\u\[\033[38;5;84m\]@\[\033[38;5;39m\]\h\[\033[38;5;213m\]\w \[\033[38;5;9m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]\\$ \[$(tput sgr0)\]"
+else    
+    export PS1="\[$(tput bold)\]\[\e[31m\][\[\e[37m\]\u\[\e[32m\]@\[\e[36m\]\h\[\e[33m\]\w \[\e[31m\]]\[$(tput sgr0)\]\[\e[36m\]\\$ \[$(tput sgr0)\]"
+fi

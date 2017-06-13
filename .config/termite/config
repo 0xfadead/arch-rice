@@ -1,7 +1,7 @@
 [options]
-font 		    = Monospace 12
+font 		    = DejaVu Sans Mono 12
 cursor_blink 	= system
-cursor_shape 	= underline
+cursor_shape 	= block
 allow_bold 	    = true
 browser 	    = firefox
 clickable_url 	= true
@@ -10,36 +10,42 @@ dynamic_title 	= true
 urgent_on_bell 	= true
 
 [colors]
-foreground 	= #ffffff
-cursor		= #ff66ff
-background 	= #000000
 
-# if unset, reverses foreground and background
-# highlight 	= #2f2f2f
+# special
+foreground      = #ffffff
+foreground_bold = #ffffff
+cursor          = #ffffff
+background      = #000000
 
 # black
-color0		= #000000
-color8		= #555555
-# red 
-color1		= #aa0000
-color9		= #ff5555
-# green
-color2		= #00aa00
-color10		= #55ff55
-# orange / yellow 
-color3 		= #aa5500
-color11 	= #ffff55
-# blue 
-color12		= #a1a1a1
-color4		= #ffffff
-# purple / violet 
-color13		= #ff55ff
-# cyan 
-color6		= #00aaaa
-color14		= #c216ff 
-# grey
-color7		= #aaaaaa
-color15		= #ffffff
+color0  = #303030
+color8  = #5f5f5f
 
-# directory
-color5		= #e6e6e6
+# red
+color1  = #c03000
+color9  = #ff3a78
+
+# green
+color2  = #b1d631
+color10 = #a6cd07
+
+# yellow
+color3  = #fecf35
+color11 = #b5c865
+
+# blue
+color4  = #426870
+color12 = #4a7781
+
+# magenta
+color5  = #6d506d
+color13 = #ff3b77
+
+# cyan
+color6  = #4bb5c1
+color14 = #4bb5c1
+
+# white
+color7  = #e2e2e5
+color15 = #e2e2e5
+
