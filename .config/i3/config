@@ -58,9 +58,9 @@ bindsym $mod+e exec dmenu_run
 
 # change focus
 bindsym $mod+h focus left
-bindsym $mod+t focus right
-bindsym $mod+n focus up
-bindsym $mod+s focus down
+bindsym $mod+n focus right
+bindsym $mod+c focus up
+bindsym $mod+t focus down 
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -177,7 +177,7 @@ client.background       $white
 
 
 
-# System related bindings `
+# System related bindings 
 set $Locker $HOME/.config/i3/lock.sh 
 
 set $mode_system System
@@ -196,13 +196,29 @@ mode "$mode_system" {
 
 bindsym $mod+Pause mode "$mode_system" 
 
+# Backlight bindings
+set $mode_backlight Backlight
+mode "$mode_backlight" {
+    # Absolute Values 
+    bindsym m exec --no-startup-id xbacklight -set 100 -time 100, mode "default"  
+    bindsym h exec --no-startup-id xbacklight -set 50 -time 100, mode "default" 
+    # inc and dec 
+    bindsym F9  exec --no-startup-id xbacklight -dec 10 -time 50
+    bindsym F10 exec --no-startup-id xbacklight -inc 10 -time 50
+
+    # back to normal: Enter or Escape 
+    bindsym Return mode "default" 
+    bindsym Escape mode "default" 
+}
+
+bindsym $mod+Shift+b mode "$mode_backlight" 
 # Screenshot on release
 bindsym --release $mod+Insert exec --no-startup-id "maim $HOME/Pictures/screenshot-$(date +'%Y-%m-%d_%H:%M:%S').png"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar { 
-        status_command i3status
+        status_command i3blocks
         i3bar_command i3bar -t
 	    position top
         tray_output primary
