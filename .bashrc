@@ -11,8 +11,10 @@ alias ls='ls --group-directories-first --color=auto -F'
 alias ll='ls -l --group-directories-first --color=auto -F'
 alias la='ls -la --group-directories-first --color=auto -F'
 alias df='df -h'
-alias fol='source ~/scripts/./follow.sh'
+alias fol='source ~/scripts/follow.sh'
 alias godark='sudo openvpn --config $HOME/.config/cryptostorm/cstorm_linux-uswest_udp.ovpn --auth-nocache --daemon'
+alias morning='sudo pacman -Syu && $HOME/scripts/upgrade_aur.sh'
+
 
 if [ -z "$(pidof i3)" ]; then
     export PS1="\[$(tput bold)\]\[\033[38;5;9m\][\[\033[38;5;227m\]\u\[\033[38;5;84m\]@\[\033[38;5;39m\]\h\[\033[38;5;213m\]\w \[\033[38;5;9m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]\\$ \[$(tput sgr0)\]"
@@ -25,9 +27,9 @@ fi
 streaming() {
     INRES="1600x900" # input resolution
     OUTRES="1600x900" # output resolution
-    FPS="15" # target FPS
-    GOP="30" # i-frame interval, should be double of FPS,
-    GOPMIN="15" # min i-frame interval, should be equal to fps,
+    FPS="30" # target FPS
+    GOP="60" # i-frame interval, should be double of FPS,
+    GOPMIN="30" # min i-frame interval, should be equal to fps,
     THREADS="2" # max 6
     CBR="1000k" # constant bitrate (should be between 1000k - 3000k)
     QUALITY="ultrafast"  # one of the many FFMPEG preset
