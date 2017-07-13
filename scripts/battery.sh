@@ -13,7 +13,7 @@ CHARGE=$(cat $BATPATH/capacity)
 echo $CHARGE% # full text
 echo $CHARGE% # short text
 
-if [[ "$STATUS" -eq "Discharging" ]]; then
+if [[ "$STATUS" == "Discharging" ]]; then
     if [[ $CHARGE -gt 60 ]]; then
         echo "#00FF00" #lime green
     elif [[ $CHARGE -gt 35 ]]; then
@@ -23,4 +23,7 @@ if [[ "$STATUS" -eq "Discharging" ]]; then
     else
         echo "#FF0000" #red
     fi
+else
+    echo "#0099ff" #light blue
 fi
+
