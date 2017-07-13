@@ -218,9 +218,9 @@ bindsym --release $mod+Insert exec --no-startup-id "maim $HOME/Pictures/screensh
 set $mode_volcontrol VolumeControl
 mode "$mode_volcontrol" {
     # Volume down 
-    bindsym F6 exec --no-startup-id $HOME/scripts/volume.bash 2
+    bindsym F6 exec --no-startup-id $HOME/scripts/volume.sh 2
     # Volume up
-    bindsym F7 exec --no-startup-id $HOME/scripts/volume.bash 1
+    bindsym F7 exec --no-startup-id $HOME/scripts/volume.sh 1
     # back to normal: Enter or Escape 
     bindsym Return mode "default" 
     bindsym Escape mode "default" 

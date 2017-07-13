@@ -33,9 +33,9 @@ markup=none
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
-[volume]
-label=VOL
-#label=♪
+[volume pulse]
+#label=VOL
+label=♪
 instance=Master
 #instance=PCM
 interval=once
@@ -71,10 +71,10 @@ color=#00FF00
 interval=10
 separator=false
 
-[wifi]
-instance=wlo1
-interval=10
-separator=false
+#[wifi]
+#instance=wlo1
+#interval=10
+#separator=false
 
 # Network interface monitoring
 #
@@ -107,23 +107,22 @@ separator=false
 #
 # The battery instance defaults to 0.
 [battery]
-label=BAT
-# label=⚡
-command=[[ -d /sys/class/power_supply/BAT0 ]] && echo "$(cat /sys/class/power_supply/BAT0/capacity) %"
+label=⚡
+command=echo "$($HOME/scripts/battery.sh)"
 instance=1
-interval=30
-min_width=BAT 100%
+interval=20
+min_width=⚡100%
 
 # Temperature of my CPU cores 
 [cpu-temp-0]
 label=CPU0
-command=echo "$($HOME/scripts/temperature.sh 'Core 0')°C" 
-interval=5
+command=echo "$($HOME/scripts/temperature.sh 'Core 0')" 
+interval=15
 
 [cpu-temp-1]
 label=CPU1
-command=echo "$($HOME/scripts/temperature.sh 'Core 1')°C" 
-interval=5
+command=echo "$($HOME/scripts/temperature.sh 'Core 1')" 
+interval=15
 
 # Date Time
 #
@@ -143,8 +142,8 @@ interval=5
 # OpenVPN support
 #
 # Support multiple VPN, with colors.
-#[openvpn]
-#interval=20
+[openvpn]
+interval=20
 
 # Temperature
 #
