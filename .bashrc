@@ -7,9 +7,12 @@
 
 export EDITOR=/usr/bin/vim
 
+# shell opts: see bash(1)
+shopt -s cdspell dirspell checkwinsize
+
 alias ls='ls --group-directories-first --color=auto -F'
 alias ll='ls -l --group-directories-first --color=auto -F'
-alias la='ls -la --group-directories-first --color=auto -F'
+alias lla='ls -la --group-directories-first --color=auto -F'
 alias df='df -h'
 alias fol='source ~/scripts/follow.sh'
 alias godark='sudo openvpn --config $HOME/.config/cryptostorm/cstorm_linux-uswest_udp.ovpn --auth-nocache --daemon'
@@ -19,7 +22,7 @@ alias morning='sudo pacman -Syu && $HOME/scripts/upgrade_aur.sh'
 if [ -z "$(pidof i3)" ]; then
     export PS1="\[$(tput bold)\]\[\033[38;5;9m\][\[\033[38;5;227m\]\u\[\033[38;5;84m\]@\[\033[38;5;39m\]\h\[\033[38;5;213m\]\w \[\033[38;5;9m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]\\$ \[$(tput sgr0)\]"
 else    
-    export PS1="\[$(tput bold)\]\[\e[31m\][\[\e[37m\]\u\[\e[32m\]@\[\e[36m\]\h\[\e[33m\]\w \[\e[31m\]]\[$(tput sgr0)\]\[\e[36m\]\\$ \[$(tput sgr0)\]"
+    export PS1="\[\e[0;49;31m\][\[\e[0;49;32m\]\u\[\e[0;100;33m\]@\[\e[0;100;36m\]\h \[\e[0;100;35m\]\W\[\e[0;100;31m\]]\[\e[0;100;37m\]\\$ \[$(tput sgr0)\]"
 fi
 
 
