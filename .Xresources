@@ -1,10 +1,10 @@
-!Xft.dpi: 96
-!Xft.antialias: true
-!Xft.rgba: rgb
-!Xft.hinting: true
-!Xft.hintstyle: hintfull
-!Xft.autohint: true
-!
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintfull
+Xft.autohint: true
+
 !! --[ URxvt - General ]-------------------------------------
 URxvt.intensityStyles: false
 URxvt.loginShell:false

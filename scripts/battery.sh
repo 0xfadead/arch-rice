@@ -10,20 +10,11 @@ BATPATH="/sys/class/power_supply/BAT$bat"
 STATUS=$(cat $BATPATH/status)
 CHARGE=$(cat $BATPATH/capacity)
 
-echo $CHARGE% # full text
-echo $CHARGE% # short text
-
-if [[ "$STATUS" == "Discharging" ]]; then
-    if [[ $CHARGE -gt 60 ]]; then
-        echo "#00FF00" #lime green
-    elif [[ $CHARGE -gt 35 ]]; then
-        echo "#FFFF00" #yellow
-    elif [[ $CHARGE -gt 15 ]]; then
-        echo "#FF8800" #orange
-    else
-        echo "#FF0000" #red
-    fi
+if [[ $STATUS == "Discharging" ]]; then
+	echo "⚡ $CHARGE% Bat";
+elif [[ $STATUS == "Charging" ]]; then
+    echo " $CHARGE% Chr"
 else
-    echo "#0099ff" #light blue
+    echo " $CHARGE% Chr"
 fi
 

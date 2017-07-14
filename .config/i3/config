@@ -10,7 +10,7 @@
 
 # Variables
 set $mod        Mod4
-set $term       termite  
+set $term       urxvt
 set $browser    firefox
 
 # Colors 
@@ -172,13 +172,13 @@ bindsym $mod+w      exec --no-startup-id $browser
 bindsym $mod+z      exec --no-startup-id $term -e htop       
 
 # class                 border  backgr. text    indicator  child_border
-client.focused          #4c7899 #ff5b5b $white  $darkwhite $darkwhite 
-client.focused_inactive #333333 #5f676a $white  $darkwhite $darkwhite 
-client.unfocused        #333333 #222222 #888888 #292d2e    #222222
-client.urgent           #2f343a #900000 $white  #900000    #900000
-client.placeholder      #000000 #0c0c0c $white  #000000    #0c0c0c
-
-client.background       $white 
+#client.focused          #657b83 #657b83 $white  $darkwhite $darkwhite 
+#client.focused_inactive #333333 #5f676a $white  $darkwhite $darkwhite 
+#client.unfocused        #333333 #222222 #888888 #292d2e    #222222
+#client.urgent           #2f343a #900000 $white  #900000    #900000
+#client.placeholder      #000000 #0c0c0c $white  #000000    #0c0c0c
+#
+#client.background       $white 
 
 
 
@@ -234,32 +234,28 @@ mode "$mode_volcontrol" {
 
 bindsym $mod+Shift+v mode "$mode_volcontrol" 
 
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar { 
-        status_command i3blocks
-        i3bar_command i3bar -t
-	    position top
-        tray_output primary
-       
-        colors {
-            statusline          $white
-            background          $transparent
-            separator           $transparent
-
-            #                   BORDER          BACKGROUND      TEXT
-            focused_workspace   $transparent    $transparent    $white 
-            inactive_workspace  $transparent    $transparent    $darkwhite 
-        }
+bar {
+ 	font pango:DejaVu Sans Mono-9 9 
+	status_command i3blocks 
+    colors {
+        separator #268bd2
+        background #002b36
+        statusline #839496
+        focused_workspace #268bd2 #268bd2 #fdf6e3
+        active_workspace #fdf6e3 #6c71c4 #fdf6e3
+        inactive_workspace #002b36 #586e75 #002b36
+        urgent_workspace #d33682 #d33682 #fdf6e3
+    }
 }
+#client.focused #6c71c4 #6c71c4 #fdf6e3 #6c71c4
+#client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
+#client.unfocused #073642 #073642 #93a1a1 #586e75
+#client.urgent #d33682 #d33682 #fdf6e3 #dc322f
 
 # AUTO START 
 # 
 # Set up wallpaper
 exec_always --no-startup-id feh --bg-fill $HOME/.config/wall.*
 
-# Mainly for opacity. 
-#exec --no-startup-id compton -b
 
 exec --no-startup-id pulseaudio --start
