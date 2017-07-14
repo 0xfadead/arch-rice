@@ -3,9 +3,10 @@
 " Set up colorscheme
 " Manually force all available colors
 " and up colors.
-set t_Co=256
-" colo delek
-syntax on
+
+syntax enable
+set background=dark
+colorscheme solarized
 
 " Sets line numbers
 set number
@@ -52,6 +53,9 @@ set showcmd
 
 " Show current position 
 set ruler 
+
+" For programming (python) 
+filetype indent on
 
 " Toggle hlsearch with F1 
 nnoremap <F1> :set hlsearch!<CR>

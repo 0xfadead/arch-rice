@@ -19,13 +19,12 @@ alias godark='sudo openvpn --config $HOME/.config/cryptostorm/cstorm_linux-uswes
 alias morning='sudo pacman -Syu && $HOME/scripts/upgrade_aur.sh'
 
 
-if [ -z "$(pidof i3)" ]; then
-    export PS1="\[$(tput bold)\]\[\033[38;5;9m\][\[\033[38;5;227m\]\u\[\033[38;5;84m\]@\[\033[38;5;39m\]\h\[\033[38;5;213m\]\w \[\033[38;5;9m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]\\$ \[$(tput sgr0)\]"
-else    
-    export PS1="\[\e[0;49;31m\][\[\e[0;49;32m\]\u\[\e[0;100;33m\]@\[\e[0;100;36m\]\h \[\e[0;100;35m\]\W\[\e[0;100;31m\]]\[\e[0;100;37m\]\\$ \[$(tput sgr0)\]"
+export PS1="\[\e[0;49;31m\][\[\e[0;49;32m\]\u\[\e[0;49;33m\]@\[\e[0;49;36m\]\h \[\e[0;39;35m\]\W\[\e[0;49;31m\]]\[\e[0;49;37m\]\\$ \[$(tput sgr0)\]"
+
+# External config
+if [[ -r ~/.dircolors ]] && type -p dircolors >/dev/null; then
+  eval $(dircolors -b "$HOME/.dircolors")
 fi
-
-
 
 streaming() {
     INRES="1600x900" # input resolution
