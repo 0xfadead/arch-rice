@@ -14,9 +14,8 @@ CRT=$(echo $TEMPS | head -3 | tail -1)
 echo $CUR°C # short text
 echo $CUR°C # short text
 
-#if [ "$CUR" -ge "$MAX" -o "$CUR" -ge "$CRT" ]; then
-#    
-#    #echo "#FF0000"
-#fi
+if [ "$CUR" -ge "$MAX" -o "$CUR" -ge "$CRT" ]; then
+    notify-send -u critical 'CPU Overheat!'    
+fi
 
 exit 0

@@ -10,6 +10,10 @@ BATPATH="/sys/class/power_supply/BAT$bat"
 STATUS=$(cat $BATPATH/status)
 CHARGE=$(cat $BATPATH/capacity)
 
+if [[ "$CHARGE" -le 15 ]]; then
+    notify-send -u critical 'Battery life at 15%'
+fi
+
 if [[ $STATUS == "Discharging" ]]; then
 	echo "⚡ $CHARGE% Bat";
 elif [[ $STATUS == "Charging" ]]; then

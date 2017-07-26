@@ -257,5 +257,8 @@ bar {
 # Set up wallpaper
 exec_always --no-startup-id feh --bg-fill $HOME/.config/wall.*
 
-
+# Set up audio server
 exec --no-startup-id pulseaudio --start
+
+# Set up notification server 
+exec --no-startup-id dunst
