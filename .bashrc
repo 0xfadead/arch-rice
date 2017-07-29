@@ -10,9 +10,9 @@ export EDITOR=/usr/bin/vim
 # shell opts: see bash(1)
 shopt -s cdspell dirspell checkwinsize
 
-alias ls='ls --group-directories-first --color=auto -F'
-alias ll='ls -l --group-directories-first --color=auto -F'
-alias lla='ls -la --group-directories-first --color=auto -F'
+alias ls='ls -h --group-directories-first --color=auto -F'
+alias ll='ls -lh --group-directories-first --color=auto -F'
+alias lla='ls -lah --group-directories-first --color=auto -F'
 alias df='df -h'
 alias fol='source ~/scripts/follow.sh'
 alias godark='sudo openvpn --config $HOME/.config/cryptostorm/cstorm_linux-uswest_udp.ovpn --auth-nocache --daemon'
