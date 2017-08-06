@@ -10,6 +10,8 @@
 
 # Variables
 set $mod        Mod4
+#bindsym         Mod1 0x1008ffb0
+set $mod        Mod1
 set $term       urxvt
 set $browser    firefox
 
@@ -49,8 +51,9 @@ bindsym $mod+Return exec $term
 # kill focused window
 bindsym $mod+Shift+apostrophe kill
 
-# start dmenu (a program launcher)
-bindsym $mod+e exec dmenu_run
+# start rofi (a program launcher)
+bindsym $mod+e exec rofi -show run
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -207,6 +210,7 @@ mode "$mode_backlight" {
     # Absolute Values 
     bindsym m exec --no-startup-id xbacklight -set 100 -time 100, mode "default"  
     bindsym h exec --no-startup-id xbacklight -set 50 -time 100, mode "default" 
+    bindsym z exec --no-startup-id xbacklight -set 0 -time 100, mode "default" 
     # inc and dec 
     bindsym F9  exec --no-startup-id xbacklight -dec 10 -time 50
     bindsym F10 exec --no-startup-id xbacklight -inc 10 -time 50
