@@ -11,7 +11,6 @@
 # Variables
 set $mod        Mod4
 #bindsym         Mod1 0x1008ffb0
-set $mod        Mod1
 set $term       urxvt
 set $browser    firefox
 
@@ -188,7 +187,6 @@ bindsym $mod+z      exec --no-startup-id $term -e htop
 # System related bindings 
 set $Locker $HOME/.config/i3/lock.sh 
 
-set $mode_system System
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default" 
     bindsym e exec --no-startup-id i3-msg-exit, mode "default" 
@@ -201,11 +199,9 @@ mode "$mode_system" {
     bindsym Return mode "default" 
     bindsym Escape mode "default" 
 }
-
 bindsym $mod+Pause mode "$mode_system" 
 
 # Backlight bindings
-set $mode_backlight Backlight
 mode "$mode_backlight" {
     # Absolute Values 
     bindsym m exec --no-startup-id xbacklight -set 100 -time 100, mode "default"  
@@ -219,26 +215,28 @@ mode "$mode_backlight" {
     bindsym Return mode "default" 
     bindsym Escape mode "default" 
 }
-
 bindsym $mod+Shift+b mode "$mode_backlight" 
+
 # Screenshot on release
 bindsym --release $mod+Insert exec --no-startup-id "maim $HOME/Pictures/screenshot-$(date +'%Y-%m-%d_%H:%M:%S').png"
+bindsym $mod+Shift+Insert exec --no-startup-id "maim -s $HOME/Pictures/screencap-$(date +'%Y-%m-%d_%H:%M:%S').png"
 
-set $mode_volcontrol VolumeControl
 mode "$mode_volcontrol" {
-    # Volume down 
-    bindsym F6 exec --no-startup-id $HOME/scripts/volume.sh 2
     # Volume up
     bindsym F7 exec --no-startup-id $HOME/scripts/volume.sh 1
+    # Volume down 
+    bindsym F6 exec --no-startup-id $HOME/scripts/volume.sh 2
     # back to normal: Enter or Escape 
     bindsym Return mode "default" 
     bindsym Escape mode "default" 
 
 }
-
 bindsym $mod+Shift+v mode "$mode_volcontrol" 
+# Mute
+bindsym XF86AudioMute exec --no-startup-id $HOME/scripts/volume.sh 3
 
 bar {
+    position top
  	font pango:DejaVu Sans Mono-9 9 
 	status_command i3blocks 
     colors {
@@ -251,7 +249,8 @@ bar {
         urgent_workspace #d33682 #d33682 #fdf6e3
     }
 }
-#client.focused #6c71c4 #6c71c4 #fdf6e3 #6c71c4
+
+client.focused #002b36 #586e75 #002b36
 #client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 #client.unfocused #073642 #073642 #93a1a1 #586e75
 #client.urgent #d33682 #d33682 #fdf6e3 #dc322f

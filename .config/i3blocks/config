@@ -28,11 +28,6 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
-[Weather]
-command=$HOME/scripts/weather.sh "10001"
-interval=1800
-color=#e97ac8
-
 [memory]
 label=:
 interval=30
@@ -105,6 +100,11 @@ instance=Master
 interval=once
 signal=10
 color=#d70a53
+
+[Weather]
+command=$HOME/scripts/weather.sh "94720"
+interval=1800
+color=#e97ac8
 
 [time]
 label=
