@@ -1,4 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/keur/.config/i3blocks'
 let g:netrw_dirhist_2='/home/keur/scripts'
+let g:netrw_dirhist_3='/home/keur/.config/i3'
+let g:netrw_dirhist_4='/home/keur/.mpd'
+let g:netrw_dirhist_5='/home/keur/Programming/soundcloud-backup'
+let g:netrw_dirhist_6='/home/keur/.vim'
+let g:netrw_dirhist_7='/home/keur/scripts'
+let g:netrw_dirhist_8='/home/keur/.config'

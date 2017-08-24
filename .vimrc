@@ -1,4 +1,15 @@
-" Enable mouse input
+" For external plugins
+execute pathogen#infect()
+
+" Syntastic Settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Set up colorscheme
 " Manually force all available colors
@@ -67,3 +78,33 @@ set showmode
 
 " Toggle line numbers with F3
 nnoremap <F3> :set nonumber!<CR>
+
+" For LaTeX
+"
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+" The rate at which the output PDF is updated
+autocmd Filetype tex setl updatetime=1 
+
+" PDF viewer program for previewing
+let g:livepreview_previewer = 'zathura'
+
+nmap <F12> :LLPStartPreview<cr>
+
+
+
+
+
+
+
+
+
+
