@@ -31,7 +31,7 @@ markup=none
 [memory]
 label=:
 interval=30
-color=#1793D1
+#color=#1793D1
 
 #[disk-root]
 #label=:
@@ -43,24 +43,24 @@ color=#1793D1
 label=:
 command=/usr/lib/i3blocks/disk $HOME
 interval=30
-color=#859900
+#color=#859900
 
 [ssid]
 label=
 command=echo "$(iw dev wlo1 link | grep SSID | cut -d " " -f 2-)"
-color=#d33682
+#color=#d33682
 interval=5
 
 [wireless]
 instance=wlo1
 command=/usr/lib/i3blocks/iface
-color=#00FF00
+#color=#00FF00
 interval=10
 
 [strength]
 command=echo "$(iw dev wlo1 link | grep signal | cut -d " " -f 2-)"
 interval=10
-color=#cb4b16
+#color=#cb4b16
 
 # Battery indicator
 #
@@ -75,7 +75,7 @@ interval=20
 label=
 command=echo "$($HOME/scripts/temperature.sh 'Core 0')" 
 interval=15
-color=#7F00FF 
+#color=#7F00FF 
 
 #[cpu-temp-1]
 #label=
@@ -86,7 +86,7 @@ color=#7F00FF
 label= 
 command=/usr/lib/i3blocks/load_average
 interval=10
-color=#6c71c4
+#color=#6c71c4
 
 # Volume indicator
 #
@@ -99,15 +99,15 @@ instance=Master
 #instance=PCM
 interval=once
 signal=10
-color=#d70a53
+#color=#d70a53
 
 [Weather]
 command=$HOME/scripts/weather.sh "94720"
 interval=1800
-color=#e97ac8
+#color=#e97ac8
 
 [time]
 label=
 command=date '+%a %m-%d-%y %l:%M:%S %p'
 interval=5
-color=#50C878
+#color=#50C878
