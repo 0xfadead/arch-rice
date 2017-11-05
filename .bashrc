@@ -16,7 +16,7 @@ alias lla='ls -lah --group-directories-first --color=auto -F'
 alias df='df -h'
 alias fol='source ~/scripts/follow.sh'
 alias godark='sudo openvpn --config $HOME/.config/cryptostorm/cstorm_linux-uswest_udp.ovpn --auth-nocache --daemon'
-alias morning='sudo pacman -Syyu && $HOME/scripts/upgrade_aur.sh'
+alias morning='sudo pacman -Syyu && pacaur -yu'
 alias v='/usr/bin/vim'
 alias duals='xrandr --output DP2 --mode 1440x900 --right-of eDP1; i3-msg restart'
 
@@ -27,6 +27,10 @@ export PS1="\[\e[0;49;31m\][\[\e[0;49;32m\]\u\[\e[0;49;33m\]@\[\e[0;49;36m\]\h \
 if [[ -r ~/.dircolors ]] && type -p dircolors >/dev/null; then
   eval $(dircolors -b "$HOME/.dircolors")
 fi
+
+mkshellcode() {
+	for i in $(objdump -d $1 -M intel |grep "^ " |cut -f2); do echo -n '\x'$i; done;echo
+}
 
 streaming() {
     INRES="1440x900" # input resolution
