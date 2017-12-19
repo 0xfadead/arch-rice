@@ -5,7 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
+export EDITOR="$VISUAL"
 
 # shell opts: see bash(1)
 shopt -s cdspell dirspell checkwinsize
@@ -19,7 +20,8 @@ alias godark='sudo openvpn --config $HOME/.config/cryptostorm/cstorm_linux-uswes
 alias morning='sudo pacman -Syyu && pacaur -yu'
 alias v='/usr/bin/vim'
 alias duals='xrandr --output DP2 --mode 1440x900 --right-of eDP1; i3-msg restart'
-
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias zerotier='zerotier-cli'
 
 export PS1="\[\e[0;49;31m\][\[\e[0;49;32m\]\u\[\e[0;49;33m\]@\[\e[0;49;36m\]\h \[\e[0;39;35m\]\W\[\e[0;49;31m\]]\[\e[0;49;37m\]\\$ \[$(tput sgr0)\]"
 
@@ -50,4 +52,3 @@ streaming() {
       -s $OUTRES -preset $QUALITY -tune film -acodec libmp3lame -threads $THREADS -strict normal \
       -bufsize $CBR "rtmp://$SERVER.twitch.tv/app/$STREAM_KEY"
 }
-

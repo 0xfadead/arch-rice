@@ -15,12 +15,13 @@ let g:syntastic_check_on_wq = 0
 " Manually force all available colors
 " and up colors.
 
-syntax enable
-" set background=dark
-colorscheme wal
+syntax on
+colorscheme solarized
+set background=dark
 
 " Sets line numbers
 set number
+set relativenumber
 
 " Tab key adds 4 spaces, 
 " pushing delete will delete the 4 spaces as if it were a tab character
@@ -77,7 +78,10 @@ set pastetoggle=<F2>
 set showmode
 
 " Toggle line numbers with F3
-nnoremap <F3> :set nonumber!<CR>
+nnoremap <F3> :set norelativenumber! nonumber!<CR>
+
+" Ranger integration 
+let g:ranger_map_keys = 0
 
 " For LaTeX
 "
@@ -98,13 +102,3 @@ autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'zathura'
 
 nmap <F12> :LLPStartPreview<cr>
-
-
-
-
-
-
-
-
-
-
