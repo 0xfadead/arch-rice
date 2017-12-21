@@ -237,30 +237,38 @@ bindsym $mod+Shift+v mode "$mode_volcontrol"
 bindsym XF86AudioMute exec --no-startup-id $HOME/scripts/volume.sh 3
 
 bar {
+    i3bar_command $HOME/.config/polybar/launch.sh
     position top
  	font pango:DejaVu Sans Mono-9 9 
-	status_command i3blocks 
+	#status_command i3blocks 
     #colors {
     #    separator #268bd2
     #    background #002b36
     #    statusline #839496
     #    focused_workspace #268bd2 #268bd2 #fdf6e3
-    #    active_workspace #fdf6e3 #6c71c4 #fdf6e3
+    #   active_workspace #ffffff #6c71c4 #fdf6e3
     #    inactive_workspace #002b36 #586e75 #002b36
     #    urgent_workspace #d33682 #d33682 #fdf6e3
     #}
 }
 
-#client.focused #002b36 #586e75 #002b36
-#client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-#client.unfocused #073642 #073642 #93a1a1 #586e75
-#client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+#client.focused          $bg     $bg     $fg  $bg       $bg
+#client.focused_inactive $bg     $bg     $fg  $bg       $bg
+#client.unfocused        $bg     $bg     $fg  $bg       $bg
+#client.urgent           $bg     $bg     $fg  $bg       $bg
+#client.placeholder      $bg     $bg     $fg  $bg       $bg
+#
+#client.background       $bg
 
 # AUTO START 
 # 
 # Set up wallpaper
-#exec_always --no-startup-id feh --bg-fill $HOME/.config/wall.*
-exec_always --no-startup-id wal -i $HOME/.config/wall.*
+exec_always --no-startup-id feh --bg-fill $HOME/.config/wall.*
+#exec_always --no-startup-id wal -i $HOME/.config/wall.*
 
 # Set up audio server
 exec --no-startup-id pulseaudio --start
@@ -268,5 +276,8 @@ exec --no-startup-id pulseaudio --start
 # Set up notification server 
 exec --no-startup-id dunst
 
+# Enumerate monitors and turn them on
+exec --no-startup-id $HOME/scripts/enum_displays.sh
+
 #Composite manager:
-exec --no-startup-id compton
+#exec --no-startup-id compton
