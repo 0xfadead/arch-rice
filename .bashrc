@@ -15,13 +15,21 @@ alias ls='ls -h --group-directories-first --color=auto -F'
 alias ll='ls -lh --group-directories-first --color=auto -F'
 alias lla='ls -lah --group-directories-first --color=auto -F'
 alias df='df -h'
-alias fol='source ~/scripts/follow.sh'
 alias godark='sudo openvpn --config $HOME/.config/cryptostorm/cstorm_linux-uswest_udp.ovpn --auth-nocache --daemon'
 alias morning='sudo pacman -Syyu && pacaur -yu'
 alias v='/usr/bin/vim'
-alias duals='xrandr --output DP2 --mode 1440x900 --right-of eDP1; i3-msg restart'
+alias vkern="/usr/bin/vim -c ':set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab'"
+alias duals='xrandr --output DP2 --right-of eDP1 --mode 1440x900 && i3-msg restart'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias zerotier='zerotier-cli'
+alias astsu='sudo' # Mr Robot ;)
+alias nyan='telnet nyancat.dakko.us'
+
+# ocf stuff 
+alias ocf='ssh keur@supernova'
+alias phost='ssh -L 8443:printhost:443 keur@supernova'
+alias ocfv='ssh keur@virus'
+alias ocfp="ssh -tt keur@supernova 'ssh lightning'"
 
 export PS1="\[\e[0;49;31m\][\[\e[0;49;32m\]\u\[\e[0;49;33m\]@\[\e[0;49;36m\]\h \[\e[0;39;35m\]\W\[\e[0;49;31m\]]\[\e[0;49;37m\]\\$ \[$(tput sgr0)\]"
 
@@ -30,8 +38,39 @@ if [[ -r ~/.dircolors ]] && type -p dircolors >/dev/null; then
   eval $(dircolors -b "$HOME/.dircolors")
 fi
 
+
+# Remove trailing whitespace from files
+rmwht() {
+    for i in $@; do sed -i 's/[[:space:]]\+$//' $i; done; 
+}
+
+# Convert machine code to shell code
 mkshellcode() {
 	for i in $(objdump -d $1 -M intel |grep "^ " |cut -f2); do echo -n '\x'$i; done;echo
+}
+
+wipedev() {
+    bs="4k"
+    if [[ -z "$2" ]]; then
+        bs="$2" 
+    fi
+    echo $2
+    sudo dd if=/dev/zero of=$1 bs="$bs" && sync
+}
+
+fol() {
+    target=$(fc -lnr | perl -lne "print $1 and last if /^\s*(?:cp|mv).*?((?:[^\s\0]|(?<=\\) |(?:(?<=")(?:.*?)(?=")))+$)/")
+
+    if [ -z "$target" ]; then
+        echo "No recent cp or mv cmds."
+    else
+        target=$(eval realpath "$target")
+        # In case a custom filename was given...
+        if [ -f "$target" ]; then
+            target=$(dirname "$target")
+        fi
+        cd "$target"
+    fi
 }
 
 streaming() {
@@ -52,3 +91,4 @@ streaming() {
       -s $OUTRES -preset $QUALITY -tune film -acodec libmp3lame -threads $THREADS -strict normal \
       -bufsize $CBR "rtmp://$SERVER.twitch.tv/app/$STREAM_KEY"
 }
+

@@ -163,16 +163,18 @@ mode "resize" {
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
+# back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
 bindsym $mod+p mode "resize"
 
-bindsym $mod+w      exec --no-startup-id $browser  
-bindsym $mod+z      exec --no-startup-id $term -e htop       
-bindsym $mod+r      exec --no-startup-id $term -e ranger
+bindsym $mod+w          exec --no-startup-id $browser  
+bindsym $mod+Shift+w    exec --no-startup-id qutebrowser  
+bindsym $mod+z          exec --no-startup-id $term -e htop       
+bindsym $mod+r          exec --no-startup-id $term -e ranger
+bindsym $mod+x          exec --no-startup-id run_keybase
 
 # class                 border  backgr. text    indicator  child_border
 #client.focused          #657b83 #657b83 $white  $darkwhite $darkwhite 
@@ -278,6 +280,9 @@ exec --no-startup-id dunst
 
 # Enumerate monitors and turn them on
 exec --no-startup-id $HOME/scripts/enum_displays.sh
+
+# Start caffeine in inactive mode 
+exec --no-startup-id caffeine
 
 #Composite manager:
 #exec --no-startup-id compton
