@@ -1,4 +1,3 @@
-#
 # ~/.bashrc
 #
 
@@ -16,7 +15,7 @@ alias ll='ls -lh --group-directories-first --color=auto -F'
 alias lla='ls -lah --group-directories-first --color=auto -F'
 alias df='df -h'
 alias godark='sudo openvpn --config $HOME/.config/cryptostorm/cstorm_linux-uswest_udp.ovpn --auth-nocache --daemon'
-alias morning='sudo pacman -Syyu && pacaur -yu'
+alias morning='sudo pacman -Syyu && trizen -Syu'
 alias v='/usr/bin/vim'
 alias vkern="/usr/bin/vim -c ':set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab'"
 alias duals='xrandr --output DP2 --right-of eDP1 --mode 1440x900 && i3-msg restart'
@@ -32,6 +31,9 @@ alias phost='ssh -L 8443:printhost:443 keur@supernova'
 alias ocfv='ssh keur@virus'
 alias ocfp="ssh -tt keur@supernova 'ssh puppet'"
 alias ocfm="ssh -tt keur@supernova 'ssh mirrors'"
+
+# school stuff
+alias hive='ssh cs61c-apx@hive17.cs.berkeley.edu'
 
 export PS1="\[\e[0;49;31m\][\[\e[0;49;32m\]\u\[\e[0;49;33m\]@\[\e[0;49;36m\]\h \[\e[0;39;35m\]\W\[\e[0;49;31m\]]\[\e[0;49;37m\]\\$ \[$(tput sgr0)\]"
 
