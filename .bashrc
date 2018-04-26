@@ -32,9 +32,6 @@ alias ocfv='ssh keur@virus'
 alias ocfp="ssh -tt keur@supernova 'ssh puppet'"
 alias ocfm="ssh -tt keur@supernova 'ssh mirrors'"
 
-# school stuff
-alias hive='ssh cs61c-apx@hive17.cs.berkeley.edu'
-
 export PS1="\[\e[0;49;31m\][\[\e[0;49;32m\]\u\[\e[0;49;33m\]@\[\e[0;49;36m\]\h \[\e[0;39;35m\]\W\[\e[0;49;31m\]]\[\e[0;49;37m\]\\$ \[$(tput sgr0)\]"
 
 # External config
@@ -58,6 +55,11 @@ leetmux() {
     fi
 }
 
+hiveme() {
+    MACHINE=28
+    [[ -n "$1" ]] && MACHINE="$1"
+    ssh "cs61c-apx@hive$MACHINE"".cs.berkeley.edu"
+}
 
 # Remove trailing whitespace from files
 rmwht() {
