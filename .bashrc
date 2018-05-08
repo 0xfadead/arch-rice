@@ -23,14 +23,16 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias zerotier='zerotier-cli'
 alias astsu='sudo' # Mr Robot ;)
 alias nyan='telnet nyancat.dakko.us'
+alias wee='/usr/bin/weechat'
+alias s='/usr/bin/sudo'
 
 
 # ocf stuff
-alias ocfs='ssh keur@supernova'
-alias phost='ssh -L 8443:printhost:443 keur@supernova'
+alias ocfs='ssh keur@supernova.ocf.berkeley.edu'
+alias phost='ssh -L 8443:printhost:443 keur@supernova.ocf.berkeley.edu'
 alias ocfv='ssh keur@virus'
-alias ocfp="ssh -tt keur@supernova 'ssh puppet'"
-alias ocfm="ssh -tt keur@supernova 'ssh mirrors'"
+alias ocfp="ssh -tt keur@supernova.ocf.berkeley.edu 'ssh puppet'"
+alias ocfm="ssh -tt keur@supernova.ocf.berkeley.edu 'ssh mirrors'"
 
 export PS1="\[\e[0;49;31m\][\[\e[0;49;32m\]\u\[\e[0;49;33m\]@\[\e[0;49;36m\]\h \[\e[0;39;35m\]\W\[\e[0;49;31m\]]\[\e[0;49;37m\]\\$ \[$(tput sgr0)\]"
 
