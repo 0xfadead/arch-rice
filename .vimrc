@@ -1,23 +1,25 @@
 " For external plugins
 execute pathogen#infect()
 
-" Syntastic Settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " Set up colorscheme
 " Manually force all available colors
 " and up colors.
-
-syntax on
-colorscheme solarized
+syntax enable
 set background=dark
+" Fallback and use default color scheme on terminal
+let g:solarized_termcolors=16
+let g:solarized_termtrans = 1
+colorscheme solarized
+
+" NERDTree
+autocmd vimenter * NERDTree | wincmd p
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Airline-vim
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = '>'
 
 " Sets line numbers
 set number
@@ -79,26 +81,3 @@ set showmode
 
 " Toggle line numbers with F3
 nnoremap <F3> :set norelativenumber! nonumber!<CR>
-
-" Ranger integration 
-let g:ranger_map_keys = 0
-
-" For LaTeX
-"
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" search in a singe file. This will confuse Latex-Suite. Set your grep
-" program to always generate a file-name.
-" set grepprg=grep\ -nH\ $*
-
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
-" let g:tex_flavor='latex'
-
-" The rate at which the output PDF is updated
-autocmd Filetype tex setl updatetime=1 
-
-" PDF viewer program for previewing
-let g:livepreview_previewer = 'zathura'
-
-nmap <F12> :LLPStartPreview<cr>
