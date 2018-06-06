@@ -25,14 +25,14 @@ let g:airline#extensions#tabline#left_sep = '>'
 set number
 set relativenumber
 
-" Tab key adds 4 spaces, 
+" Tab key adds 4 spaces,
 " pushing delete will delete the 4 spaces as if it were a tab character
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-" Fix my backspaces 
+" Fix my backspaces
 set backspace=indent,eol,start
 
 " Disable arrow keys in Escape mode
@@ -41,37 +41,37 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
-" set hlsearch 
-set hlsearch 
+" set hlsearch
+set hlsearch
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-" Set utf8 to standard encoding 
+" Set utf8 to standard encoding
 set encoding=utf8
 
 " Turn on regex
-set magic 
+set magic
 
 " Intelligent indentation & tabs
 set autoindent
-set smartindent 
+set smartindent
 set smartcase
-set smarttab 
+set smarttab
 
 " No backup
-set noswapfile 
+set noswapfile
 
 " Show commands
 set showcmd
 
-" Show current position 
-set ruler 
+" Show current position
+set ruler
 
-" For programming (python) 
+" For programming (python)
 filetype indent on
 
-" Toggle hlsearch with F1 
+" Toggle hlsearch with F1
 nnoremap <F1> :set hlsearch!<CR>
 
 " Toggle paste with F2

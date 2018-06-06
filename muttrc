@@ -1,9 +1,15 @@
 set folder      = imaps://imap.gmail.com/
-set imap_user   = keur@ocf.berkeley.edu 
+set imap_user   = keur@ocf.berkeley.edu
 set spoolfile   = +INBOX
 mailboxes       = +INBOX
 
+set sendmail = "msmtp -a gmail"
+set from = keur@ocf.berkeley.edu
+set realname = "Kevin Kuehler"
+
+# Default editor. Vim with spellcheck enabled
 set editor = "vim -c \":setlocal spell! spelllang=en_us\""
+
 # Store message headers locally to speed things up.
 # If hcache is a folder, Mutt will create sub cache folders for each account which may speeds things up even more.
 set header_cache = ~/.cache/mutt
@@ -25,6 +31,6 @@ set imap_keepalive = 300
 # How often to check for new mail (time in seconds).
 set mail_check = 120
 
-# Use TLS 
-set ssl_starttls = yes 
-set ssl_force_tls = yes 
+# Use TLS
+set ssl_starttls = yes
+set ssl_force_tls = yes

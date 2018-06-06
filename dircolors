@@ -55,8 +55,8 @@ TERM xterm-debian
 
 # defaults
 NORMAL 00
-FILE 00 
-DIR 01;34 
+FILE 00
+DIR 01;34
 LINK 01;36
 FIFO 40;33
 SOCK 01;35
@@ -173,4 +173,3 @@ EXEC 01;32
 .ko  00;33
 .o   00;33
 .so  00;33
-

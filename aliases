@@ -1,0 +1,19 @@
+# Standard aliases
+alias ls='ls -h --group-directories-first --color=auto -F'
+alias ll='ls -lh --group-directories-first --color=auto -F'
+alias lla='ls -lah --group-directories-first --color=auto -F'
+alias df='df -h'
+alias v='/usr/bin/vim'
+alias s='/usr/bin/sudo'
+
+# ocf stuff
+alias ocfs='ssh keur@supernova.ocf.berkeley.edu'
+alias phost='ssh -L 8443:printhost:443 keur@supernova.ocf.berkeley.edu'
+alias ocfv='ssh keur@virus.ocf.berkeley.edu'
+alias ocfp="ssh -tt keur@supernova.ocf.berkeley.edu 'ssh puppet'"
+alias ocfm="ssh -tt keur@supernova.ocf.berkeley.edu 'ssh mirrors'"
+
+# extras
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias nyan='telnet nyancat.dakko.us'
+alias wee='/usr/bin/weechat'

@@ -1,0 +1,87 @@
+# Remove trailing whitespace from files
+rmwht() {
+    for i in $@; do sed -i 's/[[:space:]]\+$//' $i; done;
+}
+
+# Convert machine code to shell code
+mkshellcode() {
+	for i in $(objdump -d $1 -M intel |grep "^ " |cut -f2); do echo -n '\x'$i; done;echo
+}
+
+# copy stream of 0s to a device
+wipedev() {
+    bs="4k"
+    if [[ -z "$2" ]]; then
+        bs="$2"
+    fi
+    echo $2
+    sudo dd if=/dev/zero of=$1 bs="$bs" && sync
+}
+
+# Jump to a directory after a copy or move command
+fol() {
+    target=$(fc -lnr | perl -lne 'print $1 and last if /^\s*(?:cp|mv).*?((?:[^\s\0]|(?<=\\) |(?:(?<=")(?:.*?)(?=")))+$)/')
+
+    if [ -z "$target" ]; then
+        echo "No recent cp or mv cmds."
+    else
+        target=$(eval realpath "$target")
+        # In case a custom filename was given...
+        if [ -f "$target" ]; then
+            target=$(dirname "$target")
+        fi
+        cd "$target"
+    fi
+}
+
+# Start tmux with two cmatrix panes for the memes
+leetmux() {
+    if [[ $(type cmatrix 2>/dev/null) ]]; then
+        PANE=$((($COLUMNS-2)/10))
+        exec tmux new-session \; \
+            split-window -h \; \
+            split-window -h \; \
+            select-pane -t 1 \; \
+            resize-pane -t 0 -x $PANE \;  \
+            send-keys -t 0 'cmatrix' C-m \;  \
+            resize-pane -t 2 -x $PANE \; \
+            send-keys -t 2 'cmatrix -C magenta' C-m \;
+    else
+        exec tmux
+    fi
+}
+
+# stream to Twitch.tv
+streaming() {
+    INRES="1440x900" # input resolution
+    OUTRES="1440x900" # output resolution
+    FPS="30" # target FPS
+    GOP="60" # i-frame interval, should be double of FPS,
+    GOPMIN="30" # min i-frame interval, should be equal to fps,
+    THREADS="2" # max 6
+    CBR="2000k" # constant bitrate (should be between 1000k - 3000k)
+    QUALITY="ultrafast"  # one of the many FFMPEG preset
+    AUDIO_RATE="44100"
+    STREAM_KEY="$1" # use the terminal command Streaming streamkeyhere to stream your video to twitch or justin
+    SERVER="live-lax" # twitch server in Los Angeles, see http://bashtech.net/twitch/ingest.php for list
+
+    ffmpeg -f x11grab -s "$INRES" -r "$FPS" -i :0.0+1600,0 -f alsa -i pulse -f alsa -i pulse -f flv -filter_complex amix=inputs=2 -ac 2 -ar $AUDIO_RATE \
+      -vcodec libx264 -g $GOP -keyint_min $GOPMIN -b:v $CBR -minrate $CBR -maxrate $CBR -pix_fmt yuv420p\
+      -s $OUTRES -preset $QUALITY -tune film -acodec libmp3lame -threads $THREADS -strict normal \
+      -bufsize $CBR "rtmp://$SERVER.twitch.tv/app/$STREAM_KEY"
+}
+
+# Display all the bash color codes
+colors() {
+    for clbg in {40..47} {100..107} 49 ; do
+        #Foreground
+        for clfg in {30..37} {90..97} 39 ; do
+            #Formatting
+            for attr in 0 1 2 4 5 7 ; do
+                #Print the result
+                echo -en "\e[${attr};${clbg};${clfg}m ^[${attr};${clbg};${clfg}m \e[0m"
+            done
+            echo #Newline
+        done
+    done
+}
