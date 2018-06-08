@@ -20,6 +20,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Airline-vim
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '>'
+let g:airline_theme='solarized'
 
 " Sets line numbers
 set number

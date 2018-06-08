@@ -3,8 +3,26 @@ alias ls='ls -h --group-directories-first --color=auto -F'
 alias ll='ls -lh --group-directories-first --color=auto -F'
 alias lla='ls -lah --group-directories-first --color=auto -F'
 alias df='df -h'
+alias du='du -h'
 alias v='/usr/bin/vim'
 alias s='/usr/bin/sudo'
+
+# git
+alias ga="git add -u"
+alias gaa="git add -A"
+alias gp="git push"
+alias gc="git commit -v"
+alias gcs="git commit -v -S"
+alias gpu="git pull"
+alias gpr="git pull --rebase"
+alias gd="git diff -M"
+alias gdc="git diff --cached -M"
+alias gdh="git diff -M HEAD"
+alias gl="git log --decorate --pretty=fuller"
+alias gm="git merge"
+alias gb="git branch -vv"
+alias gch="git checkout"
+alias gcl="git clean -d -n"
 
 # ocf stuff
 alias ocfs='ssh keur@supernova.ocf.berkeley.edu'
