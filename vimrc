@@ -69,8 +69,13 @@ set showcmd
 " Show current position
 set ruler
 
-" For programming (python)
+" Enable filetype detection
+filetype on
+filetype plugin on
 filetype indent on
+
+" Don't expand tabs on Makefile
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 " Toggle hlsearch with F1
 nnoremap <F1> :set hlsearch!<CR>
