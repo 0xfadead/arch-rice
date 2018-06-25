@@ -33,6 +33,7 @@ alias ocfp="ssh -tt keur@supernova.ocf.berkeley.edu 'ssh puppet'"
 alias ocfm="ssh -tt keur@supernova.ocf.berkeley.edu 'ssh mirrors'"
 
 # extras
+alias gambit="ssh keur@23.239.23.104"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias nyan='telnet nyancat.dakko.us'
 alias wee='/usr/bin/weechat'

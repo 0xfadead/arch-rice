@@ -38,6 +38,9 @@ set expandtab
 " Fix my backspaces
 set backspace=indent,eol,start
 
+" Reload files modified outside vim
+set autoread
+
 " Disable arrow keys in Escape mode
 map <up> <nop>
 map <down> <nop>
@@ -59,8 +62,11 @@ set magic
 " Intelligent indentation & tabs
 set autoindent
 set smartindent
-set smartcase
 set smarttab
+
+" Case insensitive search, except with capital letters
+set ignorecase
+set smartcase
 
 " No backup
 set noswapfile
