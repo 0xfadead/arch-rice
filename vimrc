@@ -6,10 +6,12 @@ execute pathogen#infect()
 " and up colors.
 syntax enable
 set background=dark
-" Fallback and use default color scheme on terminal
-let g:solarized_termcolors=16
-let g:solarized_termtrans = 1
-colorscheme solarized
+colorscheme space-vim-dark
+hi Comment guifg=#5C6370 ctermfg=59
+"   Range:   233 (darkest) ~ 238 (lightest)
+"   Default: 235
+let g:space_vim_dark_background = 234
+color space-vim-dark
 
 " NERDTree
 autocmd vimenter * NERDTree | wincmd p
@@ -20,7 +22,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Airline-vim
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '>'
-let g:airline_theme='solarized'
+let g:airline_theme='violet'
 
 " Sets line numbers
 set number
