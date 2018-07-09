@@ -1,6 +1,10 @@
 # Remove trailing whitespace from files
 rmwht() {
-    for i in $@; do sed -i 's/[[:space:]]\+$//' $i; done;
+    for i in $@; do
+        if [ ! -d "$i" ]; then
+            sed -i 's/[[:space:]]\+$//' $i;
+        fi;
+    done;
 }
 
 # Convert machine code to shell code
