@@ -25,7 +25,7 @@ _morning() {
                 dnf upgrade -y && \
                 dnf autoremove -y
             ;;
-        debian)
+        debian|ubuntu)
             apt update -y && \
                 apt upgrade -y && \
                 apt autoremove -y
