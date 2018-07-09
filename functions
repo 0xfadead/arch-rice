@@ -1,3 +1,38 @@
+# Update my system!
+morning() {
+    # stupid hack to run the function as root
+    DECL=$(declare -f _morning)
+    if [[ $EUID -ne 0 ]]; then
+        sudo bash -c "$DECL; _morning $DIST"
+    else
+        bash -c "$DECL; _morning $DIST"
+    fi
+
+    # Non-root updates
+    if [[ "$DIST" == "arch" ]]; then
+        trizen -Syu --noconfirm
+    fi
+}
+
+_morning() {
+    case "$1" in
+        arch)
+            pacman -Syyu --noconfirm && \
+                pacman -R $(pacman -Qdtq)
+            ;;
+        fedora)
+            dnf update -y && \
+                dnf upgrade -y && \
+                dnf autoremove -y
+            ;;
+        debian)
+            apt update -y && \
+                apt upgrade -y && \
+                apt autoremove -y
+            ;;
+    esac
+}
+
 # Remove trailing whitespace from files
 rmwht() {
     for i in $@; do
