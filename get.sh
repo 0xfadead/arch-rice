@@ -1,18 +1,14 @@
 #!/bin/bash -eu
 TARGET=https://github.com/kkuehler/dotfiles.git
 DEST="$HOME/dotfiles"
+
 git clone "$TARGET" "$DEST"
 cd "$DEST"
 ./install
-source "$HOME/.bashrc"
-read -rp "Are you at the OCF? [y/N] " ocf
-ocf=${ocf,,}
-if [[ "$ocf" =~ ^(yes|y) ]]; then
-    echo "Moving ~/.bashrc to ~/.bashrc.local"
-    mv "$HOME/.bashrc" "$HOME/.bashrc.local"
-fi
+scripts/ocf.sh
 cd ..
 
+echo
 # clear history
 histfiles=( "lesshst"
             "histfile"
