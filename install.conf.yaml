@@ -14,6 +14,7 @@
     ~/.dircolors: dircolors
     ~/.exports: exports
     ~/.functions: functions
+    ~/.ctags: ctags
     ~/.muttrc: muttrc
 
 - shell:

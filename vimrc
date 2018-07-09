@@ -85,6 +85,13 @@ filetype indent on
 " Don't expand tabs on Makefile
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
+" Recursively search up to home dir for ctags
+" Going up to root is too expensive
+set tags+=tags;$HOME
+
+" Ctrl+\ to up function definition in vertical split
+map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
 " Toggle hlsearch with F1
 nnoremap <F1> :set hlsearch!<CR>
 
