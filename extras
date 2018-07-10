@@ -1,0 +1,5 @@
+# A blank file meant for adding system-specific quirks
+# that I don't want versioned. Should help prevent
+# merge conflicts.
+#
+# Will be sourced on login
