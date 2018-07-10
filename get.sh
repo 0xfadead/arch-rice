@@ -2,8 +2,14 @@
 TARGET=https://github.com/kkuehler/dotfiles.git
 DEST="$HOME/dotfiles"
 
-git clone "$TARGET" "$DEST"
-cd "$DEST"
+if [ ! -d "$DEST" ]; then
+    git clone "$TARGET" "$DEST"
+    cd "$DEST"
+else
+    cd "$DEST"
+    git pull origin master
+fi
+
 ./install
 scripts/ocf.sh
 cd ..
