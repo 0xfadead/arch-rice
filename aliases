@@ -11,10 +11,10 @@ alias ctagsr='ctags -R .'
 # git
 alias ga="git add -u"
 alias gaa="git add -A"
-alias gp="git push"
+alias gpu="git push"
 alias gc="git commit -v"
 alias gcs="git commit -v -S"
-alias gpu="git pull"
+alias gp="git pull"
 alias gpr="git pull --rebase"
 alias gd="git diff -M"
 alias gdc="git diff --cached -M"
@@ -25,6 +25,7 @@ alias gm="git merge"
 alias gb="git branch -vv"
 alias gch="git checkout"
 alias gcl="git clean -d -n"
+alias gcp="git cherry-pick"
 
 # ocf stuff
 alias ocfs='ssh keur@supernova.ocf.berkeley.edu'
