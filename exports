@@ -2,5 +2,14 @@ export EDITOR=/usr/bin/vim VISUAL=/usr/bin/vim
 
 export PS1="\[\e[0;49;31m\][\[\e[0;49;32m\]\u\[\e[0;49;33m\]@\[\e[0;49;36m\]\h \[\e[0;39;35m\]\W\[\e[0;49;31m\]]\[\e[0;49;37m\]\\$ \[$(tput sgr0)\]"
 
-# set my OS environment variable
-export DIST=$(grep -hoP '^ID=\K\w+$' /etc/*-release)
+case "$OSTYPE" in
+    linux*)
+        # set my disto env variable
+        export DIST=$(grep -hoP '^ID=\K\w+$' /etc/*-release)
+        ;;
+    darwin*)
+        # use gnu utils instead of bsd
+        export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+        export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+        ;;
+esac

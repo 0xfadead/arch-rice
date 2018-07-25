@@ -8,8 +8,15 @@
     ~/.dotfiles: ''
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
-    ~/.vimrc: vimrc
-    ~/.bashrc: bashrc
+    ~/.vimrc:
+      path: vimrc
+      force: true
+    ~/.bash_profile:
+      path: bash_profile
+      force: true
+    ~/.bashrc:
+      path: bashrc
+      force: true
     ~/.aliases: aliases
     ~/.dircolors: dircolors
     ~/.exports: exports
