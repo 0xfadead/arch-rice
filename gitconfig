@@ -1,0 +1,10 @@
+[user]
+	email = keur@ocf.berkeley.edu
+	name = Kevin Kuehler
+[push]
+	default = current
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+[color]
+	ui = true

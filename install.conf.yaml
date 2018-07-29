@@ -22,6 +22,7 @@
     ~/.exports: exports
     ~/.functions: functions
     ~/.extras: extras
+    ~/.gitconfig: gitconfig
     ~/.git-prompt: git-prompt
     ~/.ctags: ctags
     ~/.muttrc: muttrc

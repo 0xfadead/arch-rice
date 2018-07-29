@@ -14,12 +14,9 @@ shopt -s cdspell
 # Bash includes filenames beginning with a '.' in the results of filename expansion
 shopt -s dotglob
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [[ -f /etc/bash_completion ]]; then
-    . /etc/bash_completion
-fi
+# Enable bash completion
+[[ -f /etc/bash_completion ]] && . /etc/bash_completion
+[[ -f /usr/local/etc/bash_completion ]] && . /usr/local/etc/bash_completion
 
 # External config
 if [[ -r ~/.dircolors ]] && type -p dircolors >/dev/null; then
