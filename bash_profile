@@ -1,3 +1,3 @@
 if [[ -r ~/.bashrc ]] && [[ -f ~/.bashrc ]]; then
-    . .bashrc
+    . ~/.bashrc
 fi
