@@ -24,6 +24,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '>'
 let g:airline_theme='violet'
 
+" YouCompleteMe -- Don't ask to use local extras
+let g:ycm_confirm_extra_conf = 0
+
 " Sets line numbers
 set number
 set relativenumber
