@@ -11,11 +11,14 @@
     ~/.vimrc:
       path: vimrc
       force: true
-    ~/.bash_profile:
-      path: bash_profile
+    ~/.profile:
+      path: profile
       force: true
     ~/.bashrc:
       path: bashrc
+      force: true
+    ~/.zshrc:
+      path: zshrc
       force: true
     ~/.aliases: aliases
     ~/.dircolors: dircolors
@@ -23,7 +26,6 @@
     ~/.functions: functions
     ~/.extras: extras
     ~/.gitconfig: gitconfig
-    ~/.git-prompt: git-prompt
     ~/.ctags: ctags
     ~/.muttrc: muttrc
 

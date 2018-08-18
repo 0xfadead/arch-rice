@@ -1,3 +1,5 @@
+unset gs # fuck off ghostscript~~~
+
 # Standard aliases
 alias ls='ls -h --group-directories-first --color=auto -F'
 alias ll='ls -lh --group-directories-first --color=auto -F'

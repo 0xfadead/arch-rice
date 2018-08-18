@@ -19,6 +19,3 @@
 [submodule "vim/bundle/space-vim-dark"]
 	path = vim/bundle/space-vim-dark
 	url = https://github.com/liuchengxu/space-vim-dark.git
-[submodule "bash-git-prompt"]
-	path = bash-git-prompt
-	url = https://github.com/magicmonty/bash-git-prompt.git

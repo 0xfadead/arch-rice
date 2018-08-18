@@ -23,6 +23,6 @@ if [[ -r ~/.dircolors ]] && type -p dircolors >/dev/null; then
   eval $(dircolors -b "$HOME/.dircolors")
 fi
 
-for cfg in ~/.{aliases,exports,functions,extras,git-prompt}; do
+for cfg in ~/.{aliases,exports,functions,extras}; do
    [[ -r "$cfg" ]] && . "$cfg"
 done
