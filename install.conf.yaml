@@ -27,6 +27,7 @@
     ~/.extras: extras
     ~/.gitconfig: gitconfig
     ~/.ctags: ctags
+    ~/.antigen.zsh: antigen.zsh
     ~/.muttrc: muttrc
 
 - shell:

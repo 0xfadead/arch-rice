@@ -11,7 +11,8 @@ alias s='/usr/bin/sudo'
 alias ctagsr='ctags -R .'
 
 # git
-alias ga="git add -u"
+alias ga="git add"
+alias gau="git add -u"
 alias gaa="git add -A"
 alias gpu="git push"
 alias gc="git commit -v"
