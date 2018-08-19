@@ -42,3 +42,4 @@ alias gambit="ssh keur@23.239.23.104"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias nyan='telnet nyancat.dakko.us'
 alias wee='/usr/bin/weechat'
+alias dotfetch='bash <(wget -o /dev/null -O- https://raw.githubusercontent.com/kkuehler/dotfiles/master/get.sh)'
