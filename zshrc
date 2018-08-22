@@ -11,6 +11,6 @@ antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 
-antigen theme lambda
+antigen theme rkj
 
 antigen apply
