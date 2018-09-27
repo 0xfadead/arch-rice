@@ -20,6 +20,9 @@
     ~/.zshrc:
       path: zshrc
       force: true
+    ~/.Xdefaults:
+      path: Xdefaults
+      force: true
     ~/.aliases: aliases
     ~/.dircolors: dircolors
     ~/.exports: exports
