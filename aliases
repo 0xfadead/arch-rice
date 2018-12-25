@@ -43,3 +43,4 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias nyan='telnet nyancat.dakko.us'
 alias wee='/usr/bin/weechat'
 alias dotfetch='bash <(wget -o /dev/null -O- https://raw.githubusercontent.com/kkuehler/dotfiles/master/get.sh)'
+alias showports='lsof -Pan -i tcp -i udp'

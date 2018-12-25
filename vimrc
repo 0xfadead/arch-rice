@@ -13,12 +13,6 @@ hi Comment guifg=#5C6370 ctermfg=59
 let g:space_vim_dark_background = 234
 color space-vim-dark
 
-" NERDTree
-autocmd vimenter * NERDTree | wincmd p
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 " Airline-vim
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '>'
