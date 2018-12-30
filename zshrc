@@ -4,6 +4,8 @@ for cfg in ~/.{aliases,exports,functions,antigen.zsh,extras}; do
 done
 
 
+gpg-connect-agent updatestartuptty /bye
+
 # Antigen Stuffz
 antigen use oh-my-zsh
 

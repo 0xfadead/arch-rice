@@ -18,7 +18,7 @@ URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
 
 !
 !! --[ URxvt - URL/Clipboard Handling ]----------------------
-URxvt.perl-ext-common:      default,matcher,url-select,keyboard-select
+URxvt.perl-ext-common:      default,matcher,url-select,keyboard-select,font-size
 URxvt.url-launcher:         /usr/bin/xdg-open
 URxvt.matcher.button:       1
 URxvt.keysym.M-u:           perl:url-select:select_next
@@ -65,3 +65,10 @@ URxvt.color14:               #93a1a1
 !! white dark/light
 URxvt.color7:                #eee8d5
 URxvt.color15:               #fdf6e3
+
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show

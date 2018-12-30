@@ -32,6 +32,10 @@
     ~/.ctags: ctags
     ~/.antigen.zsh: antigen.zsh
     ~/.muttrc: muttrc
+    ~/.gnupg/:
+        glob: true
+        path: gnupg/*
+        relink: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

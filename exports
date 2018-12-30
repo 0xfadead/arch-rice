@@ -8,6 +8,13 @@ export PATH=$PATH:$HOME/.emacs.d/bin
 # Disable for zsh
 #export PS1="\[\e[0;49;31m\][\[\e[0;49;32m\]\u\[\e[0;49;33m\]@\[\e[0;49;36m\]\h \[\e[0;39;35m\]\W\[\e[0;49;31m\]]\[\e[0;49;37m\]\\$ \[$(tput sgr0)\]"
 
+export GPG_TTY="$(tty)"
+if [ -z "$GPG_AGENT_INFO" ]; then
+    eval "$(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf)"
+fi
+
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+
 case "$OSTYPE" in
     linux*)
         # set my disto env variable
