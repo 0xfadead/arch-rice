@@ -32,6 +32,7 @@
     ~/.ctags: ctags
     ~/.antigen.zsh: antigen.zsh
     ~/.muttrc: muttrc
+    ~/.gpg.conf: gpg.conf
     ~/.gnupg/:
         glob: true
         path: gnupg/*
