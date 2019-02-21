@@ -73,6 +73,10 @@ fol() {
     fi
 }
 
+ipinfo() {
+    curl ipinfo.io/"$1"
+}
+
 # Start tmux with two cmatrix panes for the memes
 leetmux() {
     if [[ $(type cmatrix 2>/dev/null) ]]; then

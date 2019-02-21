@@ -37,6 +37,8 @@ alias ocfv='ssh keur@virus.ocf.berkeley.edu'
 alias ocfp="ssh -tt keur@supernova.ocf.berkeley.edu 'ssh puppet'"
 alias ocfm="ssh -tt keur@supernova.ocf.berkeley.edu 'ssh mirrors'"
 
+
+
 # extras
 alias gambit="mosh keur@23.239.23.104"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
@@ -45,3 +47,4 @@ alias wee='/usr/bin/weechat'
 alias dotfetch='bash <(wget -o /dev/null -O- https://raw.githubusercontent.com/kkuehler/dotfiles/master/get.sh)'
 alias showports='lsof -Pan -i tcp -i udp'
 alias cleanmosh='pgrep -u "$USER" mosh-server | tr ' ' '\n' | grep -v "$PPID" | xargs kill'
+alias staticmirror='wget --mirror --convert-links --adjust-extension --page-requisites --no-parent'
