@@ -10,7 +10,7 @@ morning() {
 
     # Non-root updates
     if [[ "$DIST" == "arch" ]]; then
-        trizen -Syu --noconfirm
+        yay -Syu --noconfirm
     fi
 }
 
@@ -46,6 +46,16 @@ rmwht() {
 mkshellcode() {
     for i in $(objdump -d $1 -M intel |grep "^ " |cut -f2); do echo -n '\x'$i; done;echo
 }
+
+# Show my top commands
+topcmds() {
+    cnt="20"
+    if [ "$#" -gt 0 ]; then
+        cnt="$1"
+    fi
+    history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n "$cnt"
+}
+
 
 # copy stream of 0s to a device
 wipedev() {

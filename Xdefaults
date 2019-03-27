@@ -3,8 +3,8 @@ URxvt.intensityStyles: false
 URxvt.loginShell:false
 URxvt.scrollBar:false
 URxvt.saveLines:5000
-URxvt.font: xft:DejaVuSansMono:pixelsize=14
-URxvt.boldFont: xft:DejaVuSansMono:pixelsize=14
+URxvt.font: xft:DejaVuSansMono:pixelsize=16
+URxvt.boldFont: xft:DejaVuSansMono:pixelsize=16
 URxvt.internalborder: 0
 URxvt.visualBell: false
 URxvt.iso14755: false
@@ -27,44 +27,42 @@ URxvt.url-select.underline: true
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
 
-URxvt.background:            #002b36
-URxvt.foreground:            #839496
-URxvt.fadeColor:             #002b36
-URxvt.cursorColor:           #93a1a1
-URxvt.pointerColorBackground:#8394961
-URxvt.pointerColorForeground:#93a1a1
+! special
+*.foreground:   #e6e1dc
+*.background:   #2b2b2b
+*.cursorColor:  #e6e1dc
 
-!! black dark/light
-URxvt.color0:                #073642
-URxvt.color8:                #002b36
+! black
+*.color0:       #2b2b2b
+*.color8:       #5a647e
 
-!! red dark/light
-URxvt.color1:                #dc322f
-URxvt.color9:                #cb4b16
+! red
+*.color1:       #da4939
+*.color9:       #da4939
 
-!! green dark/light
-URxvt.color2:                #859900
-URxvt.color10:               #8394961
+! green
+*.color2:       #a5c261
+*.color10:      #a5c261
 
-!! yellow dark/light
-URxvt.color3:                #b58900
-URxvt.color11:               #8394960
+! yellow
+*.color3:       #ffc66d
+*.color11:      #ffc66d
 
-!! blue dark/light
-URxvt.color4:                #268bd2
-URxvt.color12:               #839496
+! blue
+*.color4:       #6d9cbe
+*.color12:      #6d9cbe
 
-!! magenta dark/light
-URxvt.color5:                #d33682
-URxvt.color13:               #6c71c4
+! magenta
+*.color5:       #b6b3eb
+*.color13:      #b6b3eb
 
-!! cyan dark/light
-URxvt.color6:                #2aa198
-URxvt.color14:               #93a1a1
+! cyan
+*.color6:       #519f50
+*.color14:      #519f50
 
-!! white dark/light
-URxvt.color7:                #eee8d5
-URxvt.color15:               #fdf6e3
+! white
+*.color7:       #e6e1dc
+*.color15:      #f9f7f3
 
 URxvt.keysym.C-Up:     font-size:increase
 URxvt.keysym.C-Down:   font-size:decrease

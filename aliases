@@ -9,6 +9,7 @@ alias du='du -h'
 alias v='/usr/bin/vim'
 alias s='/usr/bin/sudo'
 alias ctagsr='ctags -R .'
+alias xclip="xclip -selection c"
 
 # git
 alias ga="git add"
@@ -29,6 +30,10 @@ alias gb="git branch -vv"
 alias gch="git checkout"
 alias gcl="git clean -d -n"
 alias gcp="git cherry-pick"
+alias gclone="git clone"
+
+# school
+alias d186="docker run -v /home/keur/school/cs186:/cs186 -it cs186/environment bash"
 
 # ocf stuff
 alias ocfs='ssh keur@supernova.ocf.berkeley.edu'
