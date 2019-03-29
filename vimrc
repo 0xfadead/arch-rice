@@ -79,6 +79,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Delete trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Don't expand tabs on Makefile
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
