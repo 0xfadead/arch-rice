@@ -19,3 +19,9 @@
 [submodule "vim/bundle/space-vim-dark"]
 	path = vim/bundle/space-vim-dark
 	url = https://github.com/liuchengxu/space-vim-dark.git
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/vim-bleeding"]
+	path = vim/bundle/vim-bleeding
+	url = https://github.com/keur/vim-bleeding.git
