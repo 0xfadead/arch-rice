@@ -1,9 +1,7 @@
-unset gs # fuck off ghostscript~~~
+# Unset annoying defaults
+unset gs # ghostscript
 
 # Standard aliases
-alias ls='ls -h --group-directories-first --color=auto -F'
-alias ll='ls -lh --group-directories-first --color=auto -F'
-alias lla='ls -lah --group-directories-first --color=auto -F'
 alias df='df -h'
 alias du='du -h'
 alias v='/usr/bin/vim'
@@ -41,8 +39,6 @@ alias phost='ssh -L 8443:printhost:443 keur@supernova.ocf.berkeley.edu'
 alias ocfv='ssh keur@virus.ocf.berkeley.edu'
 alias ocfp="ssh -tt keur@supernova.ocf.berkeley.edu 'ssh puppet'"
 alias ocfm="ssh -tt keur@supernova.ocf.berkeley.edu 'ssh mirrors'"
-
-
 
 # extras
 alias gambit="mosh keur@23.239.23.104"

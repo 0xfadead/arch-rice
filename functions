@@ -161,6 +161,21 @@ if hash git &>/dev/null ; then
 	}
 fi
 
+# Use lsd if installed
+if hash lsd &>/dev/null ; then
+    ls() {
+        lsd -h --group-dirs --color=auto -F
+    }
+
+    ll() {
+        ls -l
+    }
+
+    lla() {
+        ls -la
+    }
+fi
+
 # `o` with no arguments opens the current directory, otherwise opens the given
 # location
 o() {

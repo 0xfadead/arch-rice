@@ -1,22 +1,39 @@
-" For external plugins
-execute pathogen#infect()
+set nocompatible "Needed by Vundle
+filetype off "Needed by Vundle
+set rtp+=~/.vim/bundle/Vundle.vim "Add Vundle to runtime path
+
+call vundle#begin()
+  Plugin 'VundleVim/Vundle.vim' "Vundle
+  Plugin 'vim-airline/vim-airline' "Cool statusline
+  Plugin 'vim-airline/vim-airline-themes' "Airline themes
+  Plugin 'Shougo/neocomplete.vim' "Tab-complete code
+  Plugin 'Shougo/neosnippet.vim' "Snippet support
+  Plugin 'tpope/vim-surround' "Better deletion of brackets, parens, etc.
+  Plugin 'Shougo/neosnippet-snippets' "Snippet list
+  Plugin 'Shougo/context_filetype.vim' "Allow neosnippet to switch filetype on context
+  Plugin 'kien/ctrlp.vim' "Fuzzy file/buffer finding/switching
+  Plugin 'ludovicchabant/vim-gutentags' "ctag management
+  Plugin 'scrooloose/syntastic' "Syntax checker
+  Plugin 'notpratheek/vim-luna' "Nice theme
+  Plugin 'https://notabug.org/SylvieLorxu/vim-betterK.git' "Improve K command
+call vundle#end()
 
 " Set up colorscheme
 " Manually force all available colors
 " and up colors.
 syntax enable
 set background=dark
-colorscheme space-vim-dark
+colorscheme luna-term
 hi Comment guifg=#5C6370 ctermfg=59
 "   Range:   233 (darkest) ~ 238 (lightest)
 "   Default: 235
-let g:space_vim_dark_background = 234
-color space-vim-dark
 
+" Neocomplete. TODO: update to nvim
+let g:neocomplete#enable_at_startup = 1
 " Airline-vim
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '>'
-let g:airline_theme='violet'
+let g:airline_theme='luna'
 
 " YouCompleteMe -- Don't ask to use local extras
 let g:ycm_confirm_extra_conf = 0
@@ -84,6 +101,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Don't expand tabs on Makefile
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
+"Save as sudo with w!! (when lacking root)
+cmap w!! w !sudo tee % >/dev/null
 
 " Recursively search up to home dir for ctags
 " Going up to root is too expensive
