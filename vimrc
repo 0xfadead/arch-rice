@@ -73,6 +73,9 @@ set encoding=utf8
 " Turn on regex
 set magic
 
+" Always preference reading off disk
+set autoread
+
 " Intelligent indentation & tabs
 set autoindent
 set smartindent
