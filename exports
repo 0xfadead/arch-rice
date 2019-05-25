@@ -1,8 +1,10 @@
-export EDITOR=/usr/bin/vim 
+export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/gopath
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.emacs.d/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH="${PATH}:/opt/depot_tools"

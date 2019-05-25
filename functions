@@ -83,6 +83,20 @@ fol() {
     fi
 }
 
+treewith() {
+    pstree -Aaps "$1" | perl -e '
+        my $pid = shift;
+        while(<>) {
+            chomp;
+            if (m/$pid/) {
+                print "\e[1m\e[31m$_\e[0m\n";
+            } else {
+                print "$_\n";
+            }
+        }
+        ' "$1"
+}
+
 ipinfo() {
     curl ipinfo.io/"$1"
 }
