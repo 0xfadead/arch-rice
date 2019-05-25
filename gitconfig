@@ -9,3 +9,11 @@
 	excludesfile = ~/.gitignore
 [color]
 	ui = true
+[sendemail]
+	smtpserver = smtp.gmail.com
+	smtpuser = keur@ocf.berkeley.edu
+	smtpencryption = tls
+	smtpserverport = 587
+	annotate = yes
+[format]
+	signOff = yes
