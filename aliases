@@ -6,6 +6,7 @@ alias df='df -h'
 alias du='du -h'
 alias v='/usr/bin/vim'
 alias s='/usr/bin/sudo'
+alias cls='/usr/bin/clear'
 alias ctagsr='ctags -R .'
 alias xclip="xclip -selection c"
 
@@ -28,6 +29,7 @@ alias gb="git branch -vv"
 alias gch="git checkout"
 alias gcl="git clean -d -n"
 alias gcp="git cherry-pick"
+alias gun="git checkout -- ."
 alias gclone="git clone"
 
 # school

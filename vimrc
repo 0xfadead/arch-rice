@@ -16,6 +16,7 @@ call vundle#begin()
   Plugin 'scrooloose/syntastic' "Syntax checker
   Plugin 'notpratheek/vim-luna' "Nice theme
   Plugin 'https://notabug.org/SylvieLorxu/vim-betterK.git' "Improve K command
+  Plugin 'tpope/vim-fugitive' " git wrapper
 call vundle#end()
 
 " Set up colorscheme
@@ -54,12 +55,6 @@ set backspace=indent,eol,start
 
 " Reload files modified outside vim
 set autoread
-
-" Disable arrow keys in Escape mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
 
 " set hlsearch
 set hlsearch

@@ -1,4 +1,7 @@
 # Source my configs
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 for cfg in ~/.{aliases,exports,functions,antigen.zsh,extras}; do
    [[ -r "$cfg" ]] && source "$cfg"
 done
