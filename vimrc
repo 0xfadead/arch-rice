@@ -1,6 +1,7 @@
 set nocompatible "Needed by Vundle
 filetype off "Needed by Vundle
 set rtp+=~/.vim/bundle/Vundle.vim "Add Vundle to runtime path
+set rtp+=~/.fzf
 
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim' "Vundle
@@ -10,13 +11,17 @@ call vundle#begin()
   Plugin 'Shougo/neosnippet.vim' "Snippet support
   Plugin 'tpope/vim-surround' "Better deletion of brackets, parens, etc.
   Plugin 'Shougo/neosnippet-snippets' "Snippet list
-  Plugin 'Shougo/context_filetype.vim' "Allow neosnippet to switch filetype on context
-  Plugin 'kien/ctrlp.vim' "Fuzzy file/buffer finding/switching
-  Plugin 'ludovicchabant/vim-gutentags' "ctag management
+  "Plugin 'Shougo/context_filetype.vim' "Allow neosnippet to switch filetype on context
+  Plugin 'ludovicchabant/vim-gutentags'
+  Plugin 'xolox/vim-misc'
   Plugin 'scrooloose/syntastic' "Syntax checker
   Plugin 'notpratheek/vim-luna' "Nice theme
   Plugin 'https://notabug.org/SylvieLorxu/vim-betterK.git' "Improve K command
   Plugin 'tpope/vim-fugitive' " git wrapper
+  Plugin 'fatih/vim-go' " golang support
+  Plugin 'leafgarland/typescript-vim' " typescript highlighting
+  Plugin 'Quramy/tsuquyomi' " typescript autocompletion
+  Plugin 'junegunn/fzf.vim'
 call vundle#end()
 
 " Set up colorscheme
@@ -38,6 +43,9 @@ let g:airline_theme='luna'
 
 " YouCompleteMe -- Don't ask to use local extras
 let g:ycm_confirm_extra_conf = 0
+
+" fzf ctrl+p compatibily
+nnoremap <C-p> :Files<Cr>
 
 " Sets line numbers
 set number
@@ -99,6 +107,12 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Don't expand tabs on Makefile
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
+" JS/TS/HTML
+autocmd BufNewFile,BufRead *.ts set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.js set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.html set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.css set expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 "Save as sudo with w!! (when lacking root)
 cmap w!! w !sudo tee % >/dev/null

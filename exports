@@ -1,8 +1,9 @@
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
-export GOROOT=/usr/local/go
+export GOROOT=/usr/lib/go
 export GOPATH=$HOME/gopath
+export GO111MODULE=on
 export PATH=$PATH:$GOPATH/bin
 export PATH=/usr/local/go/bin:$PATH
 export PATH=$PATH:$HOME/.emacs.d/bin

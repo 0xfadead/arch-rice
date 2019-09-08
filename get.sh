@@ -35,8 +35,6 @@ histfiles=( "lesshst"
             "nano_history"
             "sqlite_history"
             "wget-hsts"
-            "bash_history"
-            "zsh_history"
             "python_history"
             )
 

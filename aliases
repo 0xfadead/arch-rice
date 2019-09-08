@@ -9,6 +9,10 @@ alias s='/usr/bin/sudo'
 alias cls='/usr/bin/clear'
 alias ctagsr='ctags -R .'
 alias xclip="xclip -selection c"
+alias dlvl="dlv --listen 127.0.0.1:4000 --headless exec "
+alias dlvc="dlv connect 127.0.0.1:4000"
+alias mvenv="python3 -m venv venv"
+alias iperf="iperf3"
 
 # git
 alias ga="git add"
@@ -26,6 +30,7 @@ alias gl="git log --decorate --pretty=fuller"
 alias gs="git status"
 alias gm="git merge"
 alias gb="git branch -vv"
+alias gba="git branch -a -vv"
 alias gch="git checkout"
 alias gcl="git clean -d -n"
 alias gcp="git cherry-pick"
