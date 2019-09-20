@@ -13,6 +13,7 @@ alias dlvl="dlv --listen 127.0.0.1:4000 --headless exec "
 alias dlvc="dlv connect 127.0.0.1:4000"
 alias mvenv="python3 -m venv venv"
 alias iperf="iperf3"
+alias fastlsof="lsof -i4 -n -P"
 
 # git
 alias ga="git add"

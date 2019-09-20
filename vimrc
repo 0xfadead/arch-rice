@@ -17,7 +17,6 @@ call vundle#begin()
   Plugin 'scrooloose/syntastic' "Syntax checker
   Plugin 'notpratheek/vim-luna' "Nice theme
   Plugin 'https://notabug.org/SylvieLorxu/vim-betterK.git' "Improve K command
-  Plugin 'tpope/vim-fugitive' " git wrapper
   Plugin 'fatih/vim-go' " golang support
   Plugin 'leafgarland/typescript-vim' " typescript highlighting
   Plugin 'Quramy/tsuquyomi' " typescript autocompletion
@@ -107,6 +106,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Don't expand tabs on Makefile
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
+" Shell scripting
+autocmd FileType sh set expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 " JS/TS/HTML
 autocmd BufNewFile,BufRead *.ts set expandtab tabstop=2 softtabstop=2 shiftwidth=2
