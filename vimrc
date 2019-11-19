@@ -12,7 +12,6 @@ call vundle#begin()
   Plugin 'tpope/vim-surround' "Better deletion of brackets, parens, etc.
   Plugin 'Shougo/neosnippet-snippets' "Snippet list
   "Plugin 'Shougo/context_filetype.vim' "Allow neosnippet to switch filetype on context
-  Plugin 'ludovicchabant/vim-gutentags'
   Plugin 'xolox/vim-misc'
   Plugin 'scrooloose/syntastic' "Syntax checker
   Plugin 'notpratheek/vim-luna' "Nice theme
@@ -46,6 +45,12 @@ let g:ycm_confirm_extra_conf = 0
 " fzf ctrl+p compatibily
 nnoremap <C-p> :Files<Cr>
 
+" fzf ctrl+f for ripgrep
+nnoremap <C-f> :Rg<Cr>
+
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
+
 " Sets line numbers
 set number
 set relativenumber
@@ -65,6 +70,9 @@ set autoread
 
 " set hlsearch
 set hlsearch
+
+" Improve performance, especially with macros
+set lazyredraw
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -101,27 +109,28 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Enable marker
+set colorcolumn=72
+
 " Delete trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Don't expand tabs on Makefile
-autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+" Preferences for various file formats
+autocmd FileType text setlocal tw=80
+autocmd FileType yaml setlocal et ts=2 sw=2
+autocmd FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
 
-" Shell scripting
-autocmd FileType sh set expandtab tabstop=2 softtabstop=2 shiftwidth=2
-
-" JS/TS/HTML
-autocmd BufNewFile,BufRead *.ts set expandtab tabstop=2 softtabstop=2 shiftwidth=2
-autocmd BufNewFile,BufRead *.js set expandtab tabstop=2 softtabstop=2 shiftwidth=2
-autocmd BufNewFile,BufRead *.html set expandtab tabstop=2 softtabstop=2 shiftwidth=2
-autocmd BufNewFile,BufRead *.css set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType c setlocal tabstop=8 shiftwidth=8 expandtab tw=109 cc=120
+autocmd FileType sh setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.ts setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.js setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.html setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.css setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.xml setlocal tw=109 shiftwidth=2 smarttab
 
 "Save as sudo with w!! (when lacking root)
 cmap w!! w !sudo tee % >/dev/null
-
-" Recursively search up to home dir for ctags
-" Going up to root is too expensive
-set tags+=tags;$HOME
 
 " Ctrl+\ to up function definition in vertical split
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
