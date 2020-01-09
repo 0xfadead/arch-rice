@@ -4,9 +4,11 @@ unset gs # ghostscript
 # Standard aliases
 alias df='df -h'
 alias du='du -h'
-alias v='/usr/bin/vim'
+alias v='/usr/bin/nvim'
+alias vim='/usr/bin/nvim'
 alias s='/usr/bin/sudo'
 alias cls='/usr/bin/clear'
+alias py='/usr/bin/python'
 alias ctagsr='ctags -R .'
 alias xclip="xclip -selection c"
 alias dlvl="dlv --listen 127.0.0.1:4000 --headless exec "
@@ -14,6 +16,7 @@ alias dlvc="dlv connect 127.0.0.1:4000"
 alias mvenv="python3 -m venv venv"
 alias iperf="iperf3"
 alias lsofv4="lsof -i4 -n -P"
+alias info="info --vi-keys"
 
 # git
 alias ga="git add"

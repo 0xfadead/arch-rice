@@ -6,6 +6,10 @@ for cfg in ~/.{aliases,exports,functions,antigen.zsh,extras}; do
    [[ -r "$cfg" ]] && source "$cfg"
 done
 
+autoload -Uz compinit
+compinit
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
 
 gpg-connect-agent updatestartuptty /bye
 

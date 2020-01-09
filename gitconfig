@@ -12,7 +12,7 @@
 	ui = true
 [sendemail]
 	smtpserver = smtp.gmail.com
-	smtpuser = keur@ocf.berkeley.edu
+	smtpuser = keur@xcf.berkeley.edu
 	smtpencryption = tls
 	smtpserverport = 587
 	annotate = yes
@@ -20,7 +20,12 @@
 	signOff = yes
 [diff]
 	tool = vimdiff
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
 [difftool]
+	prompt = false
+[mergetool]
 	prompt = false
 [apply]
 	whitespace = fix

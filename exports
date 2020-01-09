@@ -19,8 +19,12 @@ export GPG_TTY="$(tty)"
 if [ -z "$GPG_AGENT_INFO" ]; then
     eval "$(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf)"
 fi
-
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent`
+    ssh-add
+fi
 
 case "$OSTYPE" in
     linux*)

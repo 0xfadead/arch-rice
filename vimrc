@@ -109,18 +109,20 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" Enable marker
-set colorcolumn=72
-
 " Delete trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Preferences for various file formats
-autocmd FileType text setlocal tw=80
+set tw=79
+set cc=79
+autocmd FileType text setlocal tw=79
 autocmd FileType yaml setlocal et ts=2 sw=2
 autocmd FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
+autocmd FileType gitcommit setlocal tw=72
 
-autocmd FileType c setlocal tabstop=8 shiftwidth=8 expandtab tw=109 cc=120
+autocmd FileType c setlocal tabstop=8 shiftwidth=8 expandtab tw=109 cc=109
+autocmd FileType h setlocal tabstop=8 shiftwidth=8 expandtab tw=109 cc=109
+autocmd FileType cpp setlocal tabstop=8 shiftwidth=8 expandtab tw=109 cc=109
 autocmd FileType sh setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.ts setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2

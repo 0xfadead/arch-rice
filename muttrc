@@ -7,6 +7,9 @@ set sendmail = "msmtp -a gmail"
 set from = keur@ocf.berkeley.edu
 set realname = "Kevin Kuehler"
 
+set sort="threads"
+set strict_threads="yes"
+
 # Default editor. Vim with spellcheck enabled
 set editor = "vim -c \":setlocal spell! spelllang=en_us\""
 
