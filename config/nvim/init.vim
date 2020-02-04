@@ -8,18 +8,14 @@ call vundle#begin()
   Plugin 'vim-airline/vim-airline' "Cool statusline
   Plugin 'vim-airline/vim-airline-themes' "Airline themes
   Plugin 'Shougo/neocomplete.vim' "Tab-complete code
-  Plugin 'Shougo/neosnippet.vim' "Snippet support
   Plugin 'tpope/vim-surround' "Better deletion of brackets, parens, etc.
-  Plugin 'Shougo/neosnippet-snippets' "Snippet list
-  "Plugin 'Shougo/context_filetype.vim' "Allow neosnippet to switch filetype on context
-  Plugin 'xolox/vim-misc'
-  Plugin 'scrooloose/syntastic' "Syntax checker
+  Plugin 'ludovicchabant/vim-gutentags' " autotagging... will it ever work?
   Plugin 'notpratheek/vim-luna' "Nice theme
   Plugin 'https://notabug.org/SylvieLorxu/vim-betterK.git' "Improve K command
   Plugin 'fatih/vim-go' " golang support
   Plugin 'leafgarland/typescript-vim' " typescript highlighting
-  Plugin 'Quramy/tsuquyomi' " typescript autocompletion
-  Plugin 'junegunn/fzf.vim'
+  Plugin 'moll/vim-node' " nodejs
+  Plugin 'junegunn/fzf.vim' " the greatest plugin ever
 call vundle#end()
 
 " Set up colorscheme
@@ -32,7 +28,6 @@ hi Comment guifg=#5C6370 ctermfg=59
 "   Range:   233 (darkest) ~ 238 (lightest)
 "   Default: 235
 
-let g:neocomplete#enable_at_startup = 1
 " Airline-vim
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '>'
