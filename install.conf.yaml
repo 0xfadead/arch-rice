@@ -37,6 +37,9 @@
       create: true
       force: true
       recursive: true
+    ~/.ripgreprc:
+      path: ripgreprc
+      force: true
     ~/.Xdefaults:
       path: Xdefaults
       force: true

@@ -4,10 +4,12 @@ set rtp+=~/.vim/bundle/Vundle.vim "Add Vundle to runtime path
 set rtp+=~/.fzf
 
 call vundle#begin()
-  Plugin 'VundleVim/Vundle.vim' "Vundle
+  Plugin 'VundleVim/Vundle.vim' " Vundle
+  Plugin 'editorconfig/editorconfig-vim' " Per-project editor settings
   Plugin 'vim-airline/vim-airline' "Cool statusline
   Plugin 'vim-airline/vim-airline-themes' "Airline themes
   Plugin 'Shougo/neocomplete.vim' "Tab-complete code
+  Plugin 'hashivim/vim-terraform' "Terraform sucks
   Plugin 'tpope/vim-surround' "Better deletion of brackets, parens, etc.
   Plugin 'ludovicchabant/vim-gutentags' " autotagging... will it ever work?
   Plugin 'notpratheek/vim-luna' "Nice theme
@@ -35,6 +37,10 @@ let g:airline_theme='luna'
 
 " YouCompleteMe -- Don't ask to use local extras
 let g:ycm_confirm_extra_conf = 0
+
+" vim-terrafrom
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
 
 " fzf ctrl+p compatibily
 nnoremap <C-p> :Files<Cr>
@@ -105,6 +111,12 @@ filetype indent on
 
 " Delete trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Mathew cha line wrapping magic
+noremap <silent> k gk
+noremap <silent> j gj
+noremap <silent> 0 g0
+noremap <silent> $ g$
 
 " Preferences for various file formats
 set tw=79
