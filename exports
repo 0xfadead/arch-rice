@@ -13,6 +13,10 @@ export PATH=$PATH:$HOME/scripts
 export PATH="${PATH}:/opt/depot_tools"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
+# Set FZF backend to fd (respect .gitignore)
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 # Disable for zsh
 #export PS1="\[\e[0;49;31m\][\[\e[0;49;32m\]\u\[\e[0;49;33m\]@\[\e[0;49;36m\]\h \[\e[0;39;35m\]\W\[\e[0;49;31m\]]\[\e[0;49;37m\]\\$ \[$(tput sgr0)\]"
 
