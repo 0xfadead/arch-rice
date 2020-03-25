@@ -18,7 +18,8 @@ _morning() {
     case "$1" in
         arch)
             pacman -Syyu --noconfirm && \
-                pacman -R $(pacman -Qdtq)
+                pacman -R $(pacman -Qdtq) && \
+                paccache -rk 2
             ;;
         fedora)
             dnf update -y && \
@@ -253,4 +254,19 @@ calc() {
 		printf "%s" "$result"
 	fi
 	printf "\\n"
+}
+
+urlencode() {
+  declare str="$*"
+  declare encoded=""
+  for ((i=0; i<${#str}; i++ ))
+  do
+    c=${str:$i:1}
+    case "$c" in
+      [-_.~a-zA-Z0-9]) x="$c" ;;
+      *) printf -v x '%%%02x' "'$c" ;;
+    esac
+    encoded+="$x"
+  done
+  echo "$encoded"
 }

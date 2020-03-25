@@ -131,6 +131,7 @@ autocmd FileType h setlocal tabstop=8 shiftwidth=8 expandtab tw=109 cc=109
 autocmd FileType cpp setlocal tabstop=8 shiftwidth=8 expandtab tw=109 cc=109
 autocmd FileType sh setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.sql setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufNewFile,BufRead *.ts setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufNewFile,BufRead *.js setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufNewFile,BufRead *.html setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
