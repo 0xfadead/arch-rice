@@ -214,7 +214,7 @@ mode "$mode_backlight" {
 }
 bindsym $mod+Shift+b mode "$mode_backlight"
 
-bindsym $mod+Shift+z exec --no-startup-id ~/scripts/fancy.pl
+bindsym $mod+Shift+z exec --no-startup-id swaylock --screenshots --clock --indicator --effect-blur 7x5 --effect-vignette 0.5:0.5
 bindsym $mod+Shift+p exec --no-startup-id grim -g "$(slurp)" ~/Pictures/screenshots/$(date +"%Y-%m-%d_%H:%M:%S.png")
 
 #
