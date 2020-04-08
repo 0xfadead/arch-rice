@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term urxvt
 # Your preferred application launcher
 set $menu rofi -show drun
 
@@ -28,11 +28,7 @@ font pango:DejaVu Sans Mono 11
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
-output eDP-1 bg "$HOME/Pictures/purple.png" fill
-output DP-1 pos 1600,0 res 1920x1200
-output DP-1 bg "$HOME/Pictures/purple.png" fill
-output DP-2 pos 1600,0 res 1920x1080
-output DP-2 bg "$HOME/Pictures/purple.png" fill
+output * bg "$HOME/Pictures/pape.png" fill
 
 input * xkb_layout us
 input * xkb_variant dvp

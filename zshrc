@@ -8,8 +8,6 @@ done
 
 autoload -Uz compinit
 compinit
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
 
 gpg-connect-agent updatestartuptty /bye
 
@@ -27,4 +25,6 @@ antigen apply
 source ~/.exports
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-source /usr/share/nvm/init-nvm.sh
+if hash nvm 2>/dev/null; then
+  source /usr/share/nvm/init-nvm.sh
+fi

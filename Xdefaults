@@ -3,8 +3,8 @@ URxvt.intensityStyles: false
 URxvt.loginShell:false
 URxvt.scrollBar:false
 URxvt.saveLines:5000
-URxvt.font: xft:DejaVuSansMono:pixelsize=16
-URxvt.boldFont: xft:DejaVuSansMono:pixelsize=16
+URxvt.font: xft:Fira Code:style=Retina:pixelsize=16:antialias=true
+URxvt.boldFont: xft:Fira Code:style=Retina:pixelsize=16:antialias=true
 URxvt.internalborder: 0
 URxvt.visualBell: false
 URxvt.iso14755: false
@@ -15,6 +15,12 @@ URxvt.scrollTtyKeypress: true
 URxvt.letterSpace: -1
 URxvt.keysym.Control-Shift-V: eval:paste_clipboard
 URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
+
+!
+!! Resize font
+!! git: https://github.com/simmel/urxvt-resize-font
+!! AUR: https://aur.archlinux.org/packages/urxvt-resize-font-git/
+urxvt.perl-ext-common: default,resize-font
 
 !
 !! --[ URxvt - URL/Clipboard Handling ]----------------------

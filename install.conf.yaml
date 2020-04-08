@@ -6,7 +6,9 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.tmux.conf: tmux.conf
+    ~/.tmux.conf:
+      path: tmux.conf
+      force: true
     ~/.vim: vim
     ~/.vimrc:
       path: vimrc
@@ -27,11 +29,9 @@
     ~/.config/sway/config:
       path: config/sway/config
       create: true
-      force: true
     ~/.config/i3status/config:
       path: config/i3status/config
       create: true
-      force: true
     ~/.config/kitty/kitty.conf:
       path: config/kitty/kitty.conf
       create: true
@@ -57,6 +57,7 @@
     ~/.muttrc: muttrc
     ~/.gpg.conf: gpg.conf
     ~/.gnupg/:
+        create: true
         glob: true
         path: gnupg/*
         relink: true
