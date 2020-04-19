@@ -46,6 +46,9 @@ alias gclone="git clone"
 # school
 alias d186="docker run -v /home/keur/school/cs186:/cs186 -it cs186/environment bash"
 
+# work
+alias brave-vpn="nmcli connection up --ask --show-secrets wg0"
+
 # ocf stuff
 alias ocfs='ssh keur@supernova.ocf.berkeley.edu'
 alias phost='ssh -L 8443:printhost:443 keur@supernova.ocf.berkeley.edu'

@@ -3,8 +3,8 @@ URxvt.intensityStyles: false
 URxvt.loginShell:false
 URxvt.scrollBar:false
 URxvt.saveLines:5000
-URxvt.font: xft:Fira Code:style=Retina:pixelsize=16:antialias=true
-URxvt.boldFont: xft:Fira Code:style=Retina:pixelsize=16:antialias=true
+URxvt.font: xft:Fira Code:style=Retina:pixelsize=16:antialias=true:hinting=true:hintstyle=hintfull
+URxvt.boldFont: xft:Fira Code:style=Retina:pixelsize=16:antialias=true:hinting=true:hintstyle=hintfull
 URxvt.internalborder: 0
 URxvt.visualBell: false
 URxvt.iso14755: false
@@ -28,7 +28,7 @@ URxvt.perl-ext-common:      default,matcher,url-select,keyboard-select
 URxvt.url-launcher:         /usr/bin/xdg-open
 URxvt.matcher.button:       1
 URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.url-select.launcher:  firefox
+URxvt.url-select.launcher:  xdg-open
 URxvt.url-select.underline: true
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search

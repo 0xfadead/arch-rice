@@ -15,6 +15,7 @@ call vundle#begin()
   Plugin 'notpratheek/vim-luna' "Nice theme
   Plugin 'https://notabug.org/SylvieLorxu/vim-betterK.git' "Improve K command
   Plugin 'fatih/vim-go' " golang support
+  Plugin 'pangloss/vim-javascript' "javascript highlighting
   Plugin 'leafgarland/typescript-vim' " typescript highlighting
   Plugin 'moll/vim-node' " nodejs
   Plugin 'junegunn/fzf.vim' " the greatest plugin ever

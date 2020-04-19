@@ -1,20 +1,30 @@
+# As god intended
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
+# Golang
 export GOROOT=/usr/lib/go
 export GOPATH=$HOME/gopath
 export GO111MODULE=on
 export PATH=$PATH:$GOPATH/bin
 export PATH=/usr/local/go/bin:$PATH
-export PATH=$PATH:$HOME/.emacs.d/bin
+
+# Rust
 export PATH=$PATH:$HOME/.cargo/bin
+
+# Emacs (deprecated)
+export PATH=$PATH:$HOME/.emacs.d/bin
+
+# Custom scripts and per user binaries
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/scripts
-export PATH="${PATH}:/opt/depot_tools"
-export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
-# Set FZF backend to fd (respect .gitignore)
-export FZF_DEFAULT_COMMAND='fd --type f'
+# Chromium
+export PATH="${PATH}:/opt/depot_tools"
+
+# ripgrep & fzf
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+export FZF_DEFAULT_COMMAND='fd --type f' # make fzf in vim use .gitignore
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Disable for zsh
@@ -24,13 +34,14 @@ export GPG_TTY="$(tty)"
 if [ -z "$GPG_AGENT_INFO" ]; then
     eval "$(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf)"
 fi
-export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 if [ -z "$SSH_AUTH_SOCK" ] ; then
     eval `ssh-agent`
     ssh-add
 fi
 
+# Set $DIST for use in ~/.functions
 case "$OSTYPE" in
     linux*)
         # set my disto env variable
