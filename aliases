@@ -42,12 +42,14 @@ alias gcl="git clean -d -n"
 alias gcp="git cherry-pick"
 alias gun="git checkout -- ."
 alias gclone="git clone"
+alias git-diff-p0="git diff --no-prefix" # patch -p0 compatible
 
 # school
 alias d186="docker run -v /home/keur/school/cs186:/cs186 -it cs186/environment bash"
 
 # work
 alias brave-vpn="nmcli connection up --ask --show-secrets wg0"
+alias chrome-py='export PATH=$(realpath .):$PATH'
 
 # ocf stuff
 alias ocfs='ssh keur@supernova.ocf.berkeley.edu'

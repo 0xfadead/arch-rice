@@ -19,6 +19,7 @@ call vundle#begin()
   Plugin 'leafgarland/typescript-vim' " typescript highlighting
   Plugin 'moll/vim-node' " nodejs
   Plugin 'junegunn/fzf.vim' " the greatest plugin ever
+  Plugin 'ericcurtin/CurtineIncSw.vim' "quickly switch between header & source
 call vundle#end()
 
 " Set up colorscheme
@@ -113,6 +114,9 @@ filetype indent on
 " Delete trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
+" RSI makes me sad
+set mouse=a
+
 " Mathew cha line wrapping magic
 noremap <silent> k gk
 noremap <silent> j gj
@@ -127,9 +131,9 @@ autocmd FileType yaml setlocal et ts=2 sw=2
 autocmd FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
 autocmd FileType gitcommit setlocal tw=72
 
-autocmd FileType c setlocal tabstop=8 shiftwidth=8 expandtab tw=109 cc=109
-autocmd FileType h setlocal tabstop=8 shiftwidth=8 expandtab tw=109 cc=109
-autocmd FileType cpp setlocal tabstop=8 shiftwidth=8 expandtab tw=109 cc=109
+autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab tw=80 cc=80
+autocmd FileType h setlocal tabstop=4 shiftwidth=4 expandtab tw=80 cc=80
+autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab tw=80 cc=80
 autocmd FileType sh setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.sql setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
@@ -155,3 +159,6 @@ set showmode
 
 " Toggle line numbers with F3
 nnoremap <F3> :set norelativenumber! nonumber!<CR>
+
+" Switch between headers and source with F4
+nnoremap <F5> :call CurtineIncSw()<CR>

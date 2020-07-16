@@ -22,10 +22,11 @@
 	tool = vimdiff
 [merge]
     tool = vimdiff
-    conflictstyle = diff3
 [difftool]
 	prompt = false
 [mergetool]
 	prompt = false
 [apply]
 	whitespace = fix
+[pull]
+	rebase = true
