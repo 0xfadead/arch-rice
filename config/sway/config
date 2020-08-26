@@ -28,11 +28,17 @@ font pango:DejaVu Sans Mono 11
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
-output * bg "$HOME/Pictures/pape.png" fill
+output * bg "$HOME/Pictures/EQEQB-PU4AEEKC6_waifu2x_art_noise1_scale_tta_1.png" fill
 
 input * xkb_layout us
 input * xkb_variant dvp
 input * xkb_options caps:swapescape
+
+output eDP-1 {
+    resolution 1920x1080
+    position 0,0
+}
+
 #
 # Example configuration:
 #
